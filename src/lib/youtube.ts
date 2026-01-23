@@ -1,4 +1,15 @@
 /**
+ * Result of parsing a YouTube channel URL.
+ * - 'id': Direct channel ID (UC...)
+ * - 'handle': Modern handle (@username)
+ * - 'custom': Custom URL (/c/name or /user/name)
+ */
+export type YouTubeChannelParseResult = {
+  type: 'id' | 'handle' | 'custom'
+  value: string
+}
+
+/**
  * Parses a YouTube channel URL or ID and extracts the channel identifier.
  *
  * Supported formats:
@@ -13,7 +24,7 @@
  */
 export function parseYouTubeChannelUrl(
   input: string
-): { type: 'id' | 'handle' | 'custom'; value: string } | null {
+): YouTubeChannelParseResult | null {
   const trimmed = input.trim()
 
   if (!trimmed) {
