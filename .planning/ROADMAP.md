@@ -8,6 +8,18 @@
 
 **Goal:** Project scaffolding with Supabase integration, channel CRUD, and real-time sync
 
+**Plans:** 8 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Project scaffold with Vite + React + Tailwind + dark theme
+- [ ] 01-02-PLAN.md — YouTube URL parser (TDD)
+- [ ] 01-03-PLAN.md — Supabase client + database schema
+- [ ] 01-04-PLAN.md — Navigation + routing setup
+- [ ] 01-05-PLAN.md — Channel CRUD + real-time sync hook
+- [ ] 01-06-PLAN.md — Channel UI components (Card, Grid, ConfirmDialog)
+- [ ] 01-07-PLAN.md — AddChannelForm + ChannelsPage integration
+- [ ] 01-08-PLAN.md — Final verification checkpoint
+
 **Deliverables:**
 - React 18 + Vite project with Tailwind CSS configured
 - Supabase client setup with environment variables
