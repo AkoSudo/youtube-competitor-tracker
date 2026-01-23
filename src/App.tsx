@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import { Toaster } from 'sonner'
 import { Nav } from './components/Nav'
 import { ChannelsPage } from './pages/ChannelsPage'
+import { ChannelDetailPage } from './pages/ChannelDetailPage'
 import { IdeasPage } from './pages/IdeasPage'
 
 export function App() {
@@ -16,6 +17,7 @@ export function App() {
         <main>
           <Routes>
             <Route path="/" element={<ChannelsPage />} />
+            <Route path="/channels/:id" element={<ChannelDetailPage />} />
             <Route path="/ideas" element={<IdeasPage />} />
           </Routes>
         </main>
