@@ -25,6 +25,38 @@ export interface ChannelInsert {
 }
 
 /**
+ * Video record from the videos table.
+ * Represents a YouTube video from a tracked channel.
+ */
+export interface Video {
+  id: string                    // UUID primary key
+  channel_id: string            // FK to channels.id
+  youtube_id: string            // YouTube video ID
+  title: string                 // Video title
+  thumbnail_url: string         // Medium thumbnail (320x180)
+  duration_seconds: number      // Duration in seconds (>= 180 for long-form)
+  view_count: number            // View count
+  published_at: string          // ISO timestamp
+  fetched_at: string            // When we last fetched from YouTube API
+  created_at: string            // When we first stored this video
+}
+
+/**
+ * Data required to insert/upsert a video.
+ * Omits auto-generated fields (id, created_at).
+ */
+export interface VideoInsert {
+  channel_id: string
+  youtube_id: string
+  title: string
+  thumbnail_url: string
+  duration_seconds: number
+  view_count: number
+  published_at: string
+  fetched_at: string
+}
+
+/**
  * Database operation result type.
  */
 export interface DbResult<T> {
