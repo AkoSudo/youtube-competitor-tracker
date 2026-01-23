@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { Link } from 'react-router'
 import type { Channel } from '../lib/types'
 import { ConfirmDialog, type ConfirmDialogRef } from './ConfirmDialog'
 
@@ -10,11 +11,14 @@ interface ChannelCardProps {
 /**
  * Displays a single channel with thumbnail, name, subscribers, and delete button.
  * REQ-CH-003: thumbnail (88x88), name, subscriber count, added by, created date
+ * Clicking navigates to channel detail page to view videos.
  */
 export function ChannelCard({ channel, onDelete }: ChannelCardProps) {
   const dialogRef = useRef<ConfirmDialogRef>(null)
 
-  const handleDeleteClick = () => {
+  const handleDeleteClick = (e: React.MouseEvent) => {
+    e.preventDefault() // Prevent link navigation
+    e.stopPropagation()
     dialogRef.current?.open()
   }
 
@@ -44,7 +48,10 @@ export function ChannelCard({ channel, onDelete }: ChannelCardProps) {
 
   return (
     <>
-      <div className="bg-[#272727] rounded-xl p-4 hover:bg-[#3f3f3f] transition-colors group">
+      <Link
+        to={`/channels/${channel.id}`}
+        className="block bg-[#272727] rounded-xl p-4 hover:bg-[#3f3f3f] transition-colors group"
+      >
         <div className="flex items-start gap-4">
           {/* Thumbnail */}
           <div className="flex-shrink-0">
@@ -100,7 +107,7 @@ export function ChannelCard({ channel, onDelete }: ChannelCardProps) {
             </svg>
           </button>
         </div>
-      </div>
+      </Link>
 
       <ConfirmDialog
         ref={dialogRef}
