@@ -63,3 +63,42 @@ export interface DbResult<T> {
   data: T | null
   error: string | null
 }
+
+/**
+ * Idea record from the ideas table.
+ * Represents a saved video idea with user attribution.
+ */
+export interface Idea {
+  id: string                    // UUID primary key
+  video_id: string              // FK to videos.id
+  note: string                  // User's note (min 10 chars)
+  added_by: string              // User who saved the idea
+  created_at: string            // ISO timestamp
+}
+
+/**
+ * Data required to insert a new idea.
+ * Omits auto-generated fields (id, created_at).
+ */
+export interface IdeaInsert {
+  video_id: string
+  note: string
+  added_by: string
+}
+
+/**
+ * Idea with joined video and channel data for display.
+ * Used when showing ideas with their source video context.
+ */
+export interface IdeaWithVideo extends Idea {
+  video: {
+    id: string
+    youtube_id: string
+    title: string
+    thumbnail_url: string
+    channel: {
+      id: string
+      name: string
+    }
+  }
+}
