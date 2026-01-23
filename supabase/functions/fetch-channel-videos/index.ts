@@ -74,17 +74,50 @@ serve(async (req) => {
     }
 
     // Step 1: Get uploads playlist ID and channel name
-    const channelRes = await fetch(
-      `https://www.googleapis.com/youtube/v3/channels?` +
-      `part=snippet,contentDetails&id=${youtubeChannelId}&key=${YOUTUBE_API_KEY}`
-    )
+    // Handle both channel IDs (UC...) and handles (@username stored as just username)
+    const isChannelId = youtubeChannelId.startsWith('UC') && youtubeChannelId.length === 24
+
+    let channelApiUrl: string
+    if (isChannelId) {
+      channelApiUrl = `https://www.googleapis.com/youtube/v3/channels?` +
+        `part=snippet,contentDetails&id=${youtubeChannelId}&key=${YOUTUBE_API_KEY}`
+    } else {
+      // Try as handle first (most common case for non-UC IDs)
+      channelApiUrl = `https://www.googleapis.com/youtube/v3/channels?` +
+        `part=snippet,contentDetails&forHandle=${youtubeChannelId}&key=${YOUTUBE_API_KEY}`
+    }
+
+    let channelRes = await fetch(channelApiUrl)
 
     if (!channelRes.ok) {
       const error = await channelRes.json()
       throw new Error(`YouTube API error: ${error.error?.message || channelRes.statusText}`)
     }
 
-    const channelData = await channelRes.json()
+    let channelData = await channelRes.json()
+
+    // If handle lookup returned nothing, try as custom URL via search
+    if (!channelData.items?.length && !isChannelId) {
+      const searchRes = await fetch(
+        `https://www.googleapis.com/youtube/v3/search?` +
+        `part=snippet&type=channel&q=${encodeURIComponent(youtubeChannelId)}&maxResults=1&key=${YOUTUBE_API_KEY}`
+      )
+
+      if (searchRes.ok) {
+        const searchData = await searchRes.json()
+        if (searchData.items?.length) {
+          const foundChannelId = searchData.items[0].snippet.channelId
+          // Now fetch full channel details with the found ID
+          channelRes = await fetch(
+            `https://www.googleapis.com/youtube/v3/channels?` +
+            `part=snippet,contentDetails&id=${foundChannelId}&key=${YOUTUBE_API_KEY}`
+          )
+          if (channelRes.ok) {
+            channelData = await channelRes.json()
+          }
+        }
+      }
+    }
 
     if (!channelData.items?.length) {
       throw new Error('Channel not found on YouTube')
