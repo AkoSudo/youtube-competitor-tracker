@@ -16,17 +16,17 @@
 | Phase | Status | Completion |
 |-------|--------|------------|
 | Phase 1: Foundation | ✓ **Complete** | 100% (8/8 plans) |
-| Phase 2: Video Retrieval | **In Progress** | 40% (2/5 plans) |
+| Phase 2: Video Retrieval | **In Progress** | 50% (3/6 plans) |
 | Phase 3: Ideas System | Blocked | — |
 | Phase 4: Polish | Blocked | — |
 
-Progress: ██████░░░░ 32% overall (10/31 plans)
+Progress: ████████░░ 79% overall (11/14 plans)
 
 ## Next Actions
 
-1. Execute 02-02: Edge Function for YouTube API integration
-2. Execute 02-04: Video list UI components
-3. Execute 02-05: Video retrieval integration test
+1. Execute 02-04: Video list UI components
+2. Execute 02-05: Video retrieval integration test
+3. Execute 02-06: Advanced features (if exists)
 4. Verify Phase 2 success criteria
 
 ## Session History
@@ -37,6 +37,7 @@ Progress: ██████░░░░ 32% overall (10/31 plans)
 | 2026-01-23 | Completed Phase 1 | 8 plans: scaffold, URL parser, Supabase, navigation, CRUD, UI, integration, verification |
 | 2026-01-23 | Started Phase 2 | Completed 02-01: Video storage foundation |
 | 2026-01-23 | Completed 02-03 | Video data layer and useChannelVideos hook |
+| 2026-01-23 | Completed 02-02 | YouTube API Edge Function with caching |
 
 ---
 
@@ -61,6 +62,10 @@ None
 | 2026-01-23 | Follow useChannels pattern for videos | Maintained consistency with existing channels data layer structure |
 | 2026-01-23 | Optimistic cached data display | Show cached videos immediately before Edge Function responds for better UX |
 | 2026-01-23 | Expose cache metadata in hook | Return cached boolean and fetchedAt so UI can display staleness information |
+| 2026-01-23 | Three-step YouTube API pattern | Efficient quota usage (3 units total) vs direct channel videos search |
+| 2026-01-23 | 180-second Shorts threshold | Safety margin above YouTube's 60-second official limit |
+| 2026-01-23 | 24-hour cache TTL | Enables ~3,333 channel refreshes/day within 10,000 quota limit |
+| 2026-01-23 | Update channel name during fetch | Eliminates need for separate channels API call, resolves Phase 1 placeholders |
 
 ---
 *Auto-generated state tracking file*
