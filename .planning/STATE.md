@@ -16,18 +16,17 @@
 | Phase | Status | Completion |
 |-------|--------|------------|
 | Phase 1: Foundation | ✓ **Complete** | 100% (8/8 plans) |
-| Phase 2: Video Retrieval | **In Progress** | 50% (3/6 plans) |
+| Phase 2: Video Retrieval | **In Progress** | 67% (4/6 plans) |
 | Phase 3: Ideas System | Blocked | — |
 | Phase 4: Polish | Blocked | — |
 
-Progress: ████████░░ 79% overall (11/14 plans)
+Progress: █████████░ 86% overall (12/14 plans)
 
 ## Next Actions
 
-1. Execute 02-04: Video list UI components
-2. Execute 02-05: Video retrieval integration test
-3. Execute 02-06: Advanced features (if exists)
-4. Verify Phase 2 success criteria
+1. Execute 02-05: Video retrieval integration test
+2. Execute 02-06: Advanced features (if exists)
+3. Verify Phase 2 success criteria
 
 ## Session History
 
@@ -38,6 +37,7 @@ Progress: ████████░░ 79% overall (11/14 plans)
 | 2026-01-23 | Started Phase 2 | Completed 02-01: Video storage foundation |
 | 2026-01-23 | Completed 02-03 | Video data layer and useChannelVideos hook |
 | 2026-01-23 | Completed 02-02 | YouTube API Edge Function with caching |
+| 2026-01-23 | Completed 02-04 | VideoCard and VideoGrid UI components |
 
 ---
 
@@ -66,6 +66,9 @@ None
 | 2026-01-23 | 180-second Shorts threshold | Safety margin above YouTube's 60-second official limit |
 | 2026-01-23 | 24-hour cache TTL | Enables ~3,333 channel refreshes/day within 10,000 quota limit |
 | 2026-01-23 | Update channel name during fetch | Eliminates need for separate channels API call, resolves Phase 1 placeholders |
+| 2026-01-23 | CSS Grid auto-fit for video grid | minmax(280px, 1fr) provides automatic responsive columns without media queries |
+| 2026-01-23 | Group hover for Save Idea button | Follows ChannelCard pattern for consistent interaction model |
+| 2026-01-23 | Bookmark icon for Save Idea | Visual metaphor prepares users for Phase 3 ideas collection |
 
 ---
 *Auto-generated state tracking file*
