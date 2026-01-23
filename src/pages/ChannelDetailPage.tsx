@@ -1,9 +1,11 @@
 import { useParams, Link } from 'react-router'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { toast } from 'sonner'
 import { supabase } from '../lib/supabase'
 import { useChannelVideos } from '../hooks/useChannelVideos'
+import { useIdeas } from '../hooks/useIdeas'
 import { VideoGrid } from '../components/VideoGrid'
+import { SaveIdeaModal, type SaveIdeaModalRef } from '../components/SaveIdeaModal'
 import { formatRelativeDate } from '../lib/formatters'
 import type { Channel, Video } from '../lib/types'
 
@@ -21,6 +23,9 @@ export function ChannelDetailPage() {
     id || null,
     channel?.youtube_id || null
   )
+
+  const modalRef = useRef<SaveIdeaModalRef>(null)
+  const { addIdea } = useIdeas()
 
   // Fetch channel details
   useEffect(() => {
@@ -53,9 +58,18 @@ export function ChannelDetailPage() {
     })
   }
 
-  const handleSaveIdea = (_video: Video) => {
-    // Phase 3: Will open Save Idea modal
-    toast.info('Save Idea feature coming in Phase 3!')
+  const handleSaveIdea = (video: Video) => {
+    modalRef.current?.open(video)
+  }
+
+  const handleSaveIdeaSubmit = async (videoId: string, note: string, addedBy: string) => {
+    const result = await addIdea({ video_id: videoId, note, added_by: addedBy })
+    if (result.success) {
+      toast.success('Idea saved!')
+    } else {
+      toast.error(result.error || 'Failed to save idea')
+    }
+    return result
   }
 
   // Loading state for channel
@@ -199,6 +213,12 @@ export function ChannelDetailPage() {
           emptyMessage="No videos found. Try refreshing or check if the channel has recent long-form content."
         />
       )}
+
+      {/* Save Idea Modal */}
+      <SaveIdeaModal
+        ref={modalRef}
+        onSave={handleSaveIdeaSubmit}
+      />
     </div>
   )
 }
