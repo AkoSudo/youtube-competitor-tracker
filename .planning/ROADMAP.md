@@ -51,8 +51,19 @@ Plans:
 
 **Goal:** YouTube API integration with video fetching, Shorts filtering, and display
 
+**Status:** Planned (2026-01-23)
+**Plans:** 6 plans in 4 waves
+
+Plans:
+- [ ] 02-01-PLAN.md — Database schema + types + dependencies (Wave 1)
+- [ ] 02-02-PLAN.md — Edge Function for YouTube API (Wave 2)
+- [ ] 02-03-PLAN.md — useChannelVideos hook + data layer (Wave 2)
+- [ ] 02-04-PLAN.md — VideoCard + VideoGrid components (Wave 3)
+- [ ] 02-05-PLAN.md — ChannelDetailPage + routing + navigation (Wave 3)
+- [ ] 02-06-PLAN.md — Verification checkpoint (Wave 4)
+
 **Deliverables:**
-- YouTube Data API v3 integration (server-side via Supabase Edge Functions or client-side with key)
+- YouTube Data API v3 integration (server-side via Supabase Edge Functions)
 - `videos` table with channel foreign key
 - Fetch channel's uploads playlist
 - Batch fetch video details
@@ -147,4 +158,4 @@ Plans:
 | **Total** | **47** | **100% covered** |
 
 ---
-*Generated: 2026-01-23*
+*Updated: 2026-01-23*
