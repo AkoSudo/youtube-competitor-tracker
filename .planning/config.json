@@ -1,0 +1,15 @@
+{
+  "workflow": {
+    "mode": "yolo",
+    "depth": "balanced",
+    "parallel": true
+  },
+  "agents": {
+    "enabled": true,
+    "profile": "balanced"
+  },
+  "project": {
+    "name": "YouTube Competitor Tracker",
+    "initialized": "2026-01-23"
+  }
+}

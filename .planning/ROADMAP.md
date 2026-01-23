@@ -1,0 +1,137 @@
+# Roadmap
+
+> YouTube Competitor Tracker v1.0
+
+## Milestone 1: MVP Release
+
+### Phase 1: Foundation
+
+**Goal:** Project scaffolding with Supabase integration, channel CRUD, and real-time sync
+
+**Deliverables:**
+- React 18 + Vite project with Tailwind CSS configured
+- Supabase client setup with environment variables
+- `channels` table with RLS policies
+- Add channel by URL (with URL parsing for all formats)
+- Channel grid with responsive layout
+- Delete channel with confirmation and cascade
+- Real-time subscription for channel changes
+- Dark theme base styling
+- Navigation structure (Channels, Ideas)
+- Toast notification system
+
+**Requirements Covered:**
+- REQ-CH-001, REQ-CH-002, REQ-CH-003, REQ-CH-004, REQ-CH-005, REQ-CH-006, REQ-CH-007
+- REQ-TC-001, REQ-TC-002, REQ-TC-003, REQ-TC-005, REQ-TC-006, REQ-TC-007
+- REQ-DM-001
+- REQ-UI-001, REQ-UI-002, REQ-UI-004, REQ-UI-006
+
+**Success Criteria:**
+- [ ] Can add channel via URL (all 4 formats work)
+- [ ] Channels display in responsive grid
+- [ ] Delete removes channel and shows in real-time for other users
+- [ ] Dark theme applied consistently
+
+---
+
+### Phase 2: Video Retrieval
+
+**Goal:** YouTube API integration with video fetching, Shorts filtering, and display
+
+**Deliverables:**
+- YouTube Data API v3 integration (server-side via Supabase Edge Functions or client-side with key)
+- `videos` table with channel foreign key
+- Fetch channel's uploads playlist
+- Batch fetch video details
+- Filter videos by duration (>= 180 seconds)
+- Channel detail page with video grid
+- Video card component with all metadata
+- View count and date formatting utilities
+- Manual refresh functionality
+- Video caching with 24hr auto-refresh
+
+**Requirements Covered:**
+- REQ-VID-001, REQ-VID-002, REQ-VID-003, REQ-VID-004, REQ-VID-005, REQ-VID-006, REQ-VID-007, REQ-VID-008
+- REQ-DM-002
+
+**Success Criteria:**
+- [ ] Clicking channel shows its videos
+- [ ] Only videos >= 3 minutes displayed
+- [ ] Video metadata (thumbnail, duration, views, date) displays correctly
+- [ ] Click opens YouTube in new tab
+- [ ] Refresh button updates videos
+
+---
+
+### Phase 3: Ideas System
+
+**Goal:** Full ideas management with save modal, ideas page, and real-time sync
+
+**Deliverables:**
+- `ideas` table with video foreign key
+- Save idea modal with note field
+- Ideas page with chronological list
+- Idea card component
+- Delete idea with confirmation
+- Real-time subscription for idea changes
+- Toast notifications for teammate's new ideas
+- Channel filter dropdown
+- Search box for filtering
+- "My Ideas" toggle
+
+**Requirements Covered:**
+- REQ-IDX-001, REQ-IDX-002, REQ-IDX-003, REQ-IDX-004, REQ-IDX-005, REQ-IDX-006, REQ-IDX-007, REQ-IDX-008
+- REQ-DM-003
+
+**Success Criteria:**
+- [ ] Can save idea with note from any video
+- [ ] Ideas page shows all ideas with source context
+- [ ] Delete works with real-time sync
+- [ ] Filter by channel works
+- [ ] Search filters by note/title
+
+---
+
+### Phase 4: Polish
+
+**Goal:** Loading states, empty states, error handling, and performance optimization
+
+**Deliverables:**
+- Skeleton loaders for channels grid
+- Skeleton loaders for videos grid
+- Skeleton loaders for ideas list
+- Empty state components with helpful messaging
+- Error boundary with fallback UI
+- Improved error toasts with actionable messages
+- Mobile responsive refinements
+- Performance audit and optimization
+- Final testing across devices
+
+**Requirements Covered:**
+- REQ-UI-003, REQ-UI-005
+- REQ-NFR-001, REQ-NFR-002, REQ-NFR-003, REQ-NFR-004
+
+**Success Criteria:**
+- [ ] Loading skeletons appear during data fetch
+- [ ] Empty states guide user on what to do
+- [ ] Errors display user-friendly messages
+- [ ] Page loads < 3s on 3G
+- [ ] Real-time updates < 2s latency
+
+---
+
+## Coverage Summary
+
+| Requirement Category | Count | Phases |
+|---------------------|-------|--------|
+| Channel Management (REQ-CH-*) | 7 | Phase 1 |
+| Video Retrieval (REQ-VID-*) | 8 | Phase 2 |
+| Ideas Management (REQ-IDX-*) | 8 | Phase 3 |
+| UI/UX (REQ-UI-*) | 6 | Phase 1, 4 |
+| Non-Functional (REQ-NFR-*) | 8 | Phase 4 |
+| Technical Constraints (REQ-TC-*) | 7 | Phase 1 |
+| Data Model (REQ-DM-*) | 3 | Phase 1, 2, 3 |
+| **Total** | **47** | **100% covered** |
+
+---
+*Generated: 2026-01-23*
