@@ -8,7 +8,7 @@
 |-------|-------|
 | Milestone | 1: MVP Release |
 | Phase | 1: Foundation |
-| Plan | 5 of 8 complete |
+| Plan | 6 of 8 complete |
 | Status | In Progress (Wave 2) |
 | Last Updated | 2026-01-23 |
 
@@ -16,12 +16,12 @@
 
 | Phase | Status | Completion |
 |-------|--------|------------|
-| Phase 1: Foundation | **In Progress** | 62% (5/8 plans) |
+| Phase 1: Foundation | **In Progress** | 75% (6/8 plans) |
 | Phase 2: Video Retrieval | Blocked | — |
 | Phase 3: Ideas System | Blocked | — |
 | Phase 4: Polish | Blocked | — |
 
-Progress: [█████░░░░░] 42% overall (5/12 plans estimated)
+Progress: [██████░░░░] 50% overall (6/12 plans estimated)
 
 ## Next Actions
 
@@ -39,6 +39,7 @@ Progress: [█████░░░░░] 42% overall (5/12 plans estimated)
 | 2026-01-23 | Completed 01-02-PLAN.md | YouTube URL parser with TDD (18 tests) |
 | 2026-01-23 | Completed 01-03-PLAN.md | Supabase client, types, and migration SQL |
 | 2026-01-23 | Completed 01-05-PLAN.md | Channel CRUD functions and useChannels hook with realtime |
+| 2026-01-23 | Completed 01-04-PLAN.md | Navigation and routing with React Router |
 
 ---
 
@@ -59,11 +60,12 @@ None
 | 2026-01-23 | Public RLS policies for v1 | No authentication in v1 - open access for team |
 | 2026-01-23 | Unique channel names for realtime | Avoids "already subscribed" errors when component remounts |
 | 2026-01-23 | Success/error objects from hook actions | Allows UI to handle errors gracefully without throwing |
+| 2026-01-23 | NavLink for navigation active states | Built-in isActive callback simplifies styling |
 
 ## Session Continuity
 
-Last session: 2026-01-23T09:35:00Z
-Stopped at: Completed 01-05-PLAN.md
+Last session: 2026-01-23T09:31:41Z
+Stopped at: Completed 01-04-PLAN.md
 Resume file: None (continue with remaining Wave 2 plans)
 
 ---
