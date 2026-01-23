@@ -8,7 +8,7 @@
 |-------|-------|
 | Milestone | 1: MVP Release |
 | Phase | 2: Video Retrieval |
-| Status | Not Started |
+| Status | In Progress |
 | Last Updated | 2026-01-23 |
 
 ## Phase Progress
@@ -16,18 +16,19 @@
 | Phase | Status | Completion |
 |-------|--------|------------|
 | Phase 1: Foundation | ✓ **Complete** | 100% (8/8 plans) |
-| Phase 2: Video Retrieval | **Not Started** | 0% |
+| Phase 2: Video Retrieval | **In Progress** | 20% (1/5 plans) |
 | Phase 3: Ideas System | Blocked | — |
 | Phase 4: Polish | Blocked | — |
 
-Progress: ████░░░░░░ 25% overall (1/4 phases)
+Progress: █████░░░░░ 29% overall (9/31 plans)
 
 ## Next Actions
 
-1. Run `/gsd:plan-phase 2` to plan Video Retrieval phase
-2. Execute Phase 2 plans
-3. Verify Phase 2 success criteria
-4. Proceed to Phase 3: Ideas System
+1. Execute 02-02: Edge Function for YouTube API integration
+2. Execute 02-03: Refresh videos functionality
+3. Execute 02-04: Video list UI components
+4. Execute 02-05: Video retrieval integration test
+5. Verify Phase 2 success criteria
 
 ## Session History
 
@@ -35,6 +36,7 @@ Progress: ████░░░░░░ 25% overall (1/4 phases)
 |------|--------|-------|
 | 2026-01-23 | Project Initialized | Created PROJECT.md, REQUIREMENTS.md, ROADMAP.md |
 | 2026-01-23 | Completed Phase 1 | 8 plans: scaffold, URL parser, Supabase, navigation, CRUD, UI, integration, verification |
+| 2026-01-23 | Started Phase 2 | Completed 02-01: Video storage foundation |
 
 ---
 
@@ -53,6 +55,9 @@ None
 | 2026-01-23 | Public RLS policies for v1 | No authentication in v1 - open access for team |
 | 2026-01-23 | Native dialog element for modals | Browser-native accessibility, focus trap, Escape key handling |
 | 2026-01-23 | Phase 1 channel names from URL | Display @handle or truncated ID until Phase 2 API resolves actual names |
+| 2026-01-23 | ON DELETE CASCADE for videos | Videos should auto-delete when parent channel is removed |
+| 2026-01-23 | UNIQUE constraint on youtube_id | Enables upsert operations for video refresh/updates |
+| 2026-01-23 | Intl.NumberFormat for view counts | Browser-native, locale-aware, zero bundle impact |
 
 ---
 *Auto-generated state tracking file*
