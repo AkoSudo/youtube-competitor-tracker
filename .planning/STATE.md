@@ -16,19 +16,18 @@
 | Phase | Status | Completion |
 |-------|--------|------------|
 | Phase 1: Foundation | ✓ **Complete** | 100% (8/8 plans) |
-| Phase 2: Video Retrieval | **In Progress** | 20% (1/5 plans) |
+| Phase 2: Video Retrieval | **In Progress** | 40% (2/5 plans) |
 | Phase 3: Ideas System | Blocked | — |
 | Phase 4: Polish | Blocked | — |
 
-Progress: █████░░░░░ 29% overall (9/31 plans)
+Progress: ██████░░░░ 32% overall (10/31 plans)
 
 ## Next Actions
 
 1. Execute 02-02: Edge Function for YouTube API integration
-2. Execute 02-03: Refresh videos functionality
-3. Execute 02-04: Video list UI components
-4. Execute 02-05: Video retrieval integration test
-5. Verify Phase 2 success criteria
+2. Execute 02-04: Video list UI components
+3. Execute 02-05: Video retrieval integration test
+4. Verify Phase 2 success criteria
 
 ## Session History
 
@@ -37,6 +36,7 @@ Progress: █████░░░░░ 29% overall (9/31 plans)
 | 2026-01-23 | Project Initialized | Created PROJECT.md, REQUIREMENTS.md, ROADMAP.md |
 | 2026-01-23 | Completed Phase 1 | 8 plans: scaffold, URL parser, Supabase, navigation, CRUD, UI, integration, verification |
 | 2026-01-23 | Started Phase 2 | Completed 02-01: Video storage foundation |
+| 2026-01-23 | Completed 02-03 | Video data layer and useChannelVideos hook |
 
 ---
 
@@ -58,6 +58,9 @@ None
 | 2026-01-23 | ON DELETE CASCADE for videos | Videos should auto-delete when parent channel is removed |
 | 2026-01-23 | UNIQUE constraint on youtube_id | Enables upsert operations for video refresh/updates |
 | 2026-01-23 | Intl.NumberFormat for view counts | Browser-native, locale-aware, zero bundle impact |
+| 2026-01-23 | Follow useChannels pattern for videos | Maintained consistency with existing channels data layer structure |
+| 2026-01-23 | Optimistic cached data display | Show cached videos immediately before Edge Function responds for better UX |
+| 2026-01-23 | Expose cache metadata in hook | Return cached boolean and fetchedAt so UI can display staleness information |
 
 ---
 *Auto-generated state tracking file*
