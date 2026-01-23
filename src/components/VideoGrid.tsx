@@ -8,15 +8,17 @@ interface VideoGridProps {
 }
 
 /**
- * Displays videos in a responsive grid layout.
- * Uses CSS Grid auto-fit for automatic column adjustment.
- * REQ-VID-003: Display top 20 long-form videos
+ * Responsive grid layout for displaying videos.
+ * Uses CSS Grid with auto-fit to adapt to screen size.
+ * REQ-VID-003: Display top 20 videos sorted by newest
  */
-export function VideoGrid({ videos, onSaveIdea, emptyMessage = 'No videos found' }: VideoGridProps) {
+export function VideoGrid({ videos, onSaveIdea, emptyMessage }: VideoGridProps) {
   if (videos.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-[#aaaaaa]">{emptyMessage}</p>
+        <p className="text-[#aaaaaa]">
+          {emptyMessage || 'No videos found.'}
+        </p>
       </div>
     )
   }

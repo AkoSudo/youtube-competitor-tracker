@@ -26,65 +26,50 @@ export function VideoCard({ video, onSaveIdea }: VideoCardProps) {
         href={`https://www.youtube.com/watch?v=${video.youtube_id}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="block relative aspect-video overflow-hidden rounded-xl bg-[#272727]"
+        className="block relative rounded-xl overflow-hidden aspect-video bg-[#272727]"
       >
         <img
           src={video.thumbnail_url}
           alt={video.title}
-          className="h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
-          loading="lazy"
+          className="w-full h-full object-cover transition-transform group-hover:scale-105"
         />
         {/* Duration badge */}
-        <div className="absolute bottom-2 right-2 rounded bg-black/80 px-1.5 py-0.5 text-xs font-medium text-white">
+        <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs font-semibold px-1.5 py-0.5 rounded">
           {formatDuration(video.duration_seconds)}
         </div>
       </a>
 
       {/* Video info */}
-      <div className="mt-3 flex gap-3">
-        <div className="flex-1 min-w-0">
-          {/* Title - max 2 lines */}
-          <a
-            href={`https://www.youtube.com/watch?v=${video.youtube_id}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block"
+      <div className="mt-3">
+        <a
+          href={`https://www.youtube.com/watch?v=${video.youtube_id}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
+          <h3
+            className="font-medium text-[#f1f1f1] line-clamp-2 leading-snug group-hover:text-white transition-colors"
+            title={video.title}
           >
-            <h3
-              className="text-sm font-medium leading-tight line-clamp-2 text-[#f1f1f1] hover:text-white"
-              title={video.title}
-            >
-              {video.title}
-            </h3>
-          </a>
+            {video.title}
+          </h3>
+        </a>
 
-          {/* Views and date */}
-          <p className="mt-1 text-xs text-[#aaaaaa]">
-            {formatViewCount(video.view_count)} views • {formatRelativeDate(video.published_at)}
-          </p>
+        <div className="flex items-center gap-2 mt-2 text-sm text-[#aaaaaa]">
+          <span>{formatViewCount(video.view_count)} views</span>
+          <span>•</span>
+          <span>{formatRelativeDate(video.published_at)}</span>
         </div>
 
         {/* Save Idea button */}
-        <button
-          onClick={handleSaveIdea}
-          className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity h-fit p-2 rounded-lg hover:bg-[#3f3f3f] text-[#aaaaaa] hover:text-white"
-          aria-label={`Save idea from "${video.title}"`}
-          title="Save Idea"
-        >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        {onSaveIdea && (
+          <button
+            onClick={handleSaveIdea}
+            className="mt-3 w-full px-3 py-2 rounded-lg bg-[#272727] hover:bg-[#3f3f3f] text-sm font-medium transition-colors"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-            />
-          </svg>
-        </button>
+            Save Idea
+          </button>
+        )}
       </div>
     </div>
   )
