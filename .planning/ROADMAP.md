@@ -91,6 +91,16 @@ Plans:
 
 **Goal:** Full ideas management with save modal, ideas page, and real-time sync
 
+**Status:** Ready
+**Plans:** 5 plans in 4 waves
+
+Plans:
+- [ ] 03-01-PLAN.md — Database schema + types (Wave 1)
+- [ ] 03-02-PLAN.md — Data layer + useIdeas hook (Wave 2)
+- [ ] 03-03-PLAN.md — SaveIdeaModal + ChannelDetailPage integration (Wave 3)
+- [ ] 03-04-PLAN.md — IdeaCard + IdeasPage with filtering (Wave 3)
+- [ ] 03-05-PLAN.md — Verification checkpoint (Wave 4)
+
 **Deliverables:**
 - `ideas` table with video foreign key
 - Save idea modal with note field
@@ -158,4 +168,4 @@ Plans:
 | **Total** | **47** | **100% covered** |
 
 ---
-*Updated: 2026-01-23*
+*Updated: 2026-01-24*
