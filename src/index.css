@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* YouTube dark theme colors as CSS custom properties */
+:root {
+  --color-background: #0f0f0f;
+  --color-surface: #272727;
+  --color-surface-hover: #3f3f3f;
+  --color-text-primary: #f1f1f1;
+  --color-text-secondary: #aaaaaa;
+  --color-border: #3f3f3f;
+  --color-accent: #ff0000;
+}
+
+/* Base dark theme applied globally */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Dialog backdrop styling */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-surface-hover);
+}
