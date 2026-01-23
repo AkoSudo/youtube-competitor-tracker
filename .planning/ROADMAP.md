@@ -47,20 +47,20 @@ Plans:
 
 ---
 
-### Phase 2: Video Retrieval
+### Phase 2: Video Retrieval ✓ COMPLETE
 
 **Goal:** YouTube API integration with video fetching, Shorts filtering, and display
 
-**Status:** Planned (2026-01-23)
-**Plans:** 6 plans in 4 waves
+**Status:** Complete (2026-01-24)
+**Plans:** 6/6 complete
 
 Plans:
-- [ ] 02-01-PLAN.md — Database schema + types + dependencies (Wave 1)
-- [ ] 02-02-PLAN.md — Edge Function for YouTube API (Wave 2)
-- [ ] 02-03-PLAN.md — useChannelVideos hook + data layer (Wave 2)
-- [ ] 02-04-PLAN.md — VideoCard + VideoGrid components (Wave 3)
-- [ ] 02-05-PLAN.md — ChannelDetailPage + routing + navigation (Wave 3)
-- [ ] 02-06-PLAN.md — Verification checkpoint (Wave 4)
+- [x] 02-01-PLAN.md — Database schema + types + dependencies (Wave 1)
+- [x] 02-02-PLAN.md — Edge Function for YouTube API (Wave 2)
+- [x] 02-03-PLAN.md — useChannelVideos hook + data layer (Wave 2)
+- [x] 02-04-PLAN.md — VideoCard + VideoGrid components (Wave 3)
+- [x] 02-05-PLAN.md — ChannelDetailPage + routing + navigation (Wave 3)
+- [x] 02-06-PLAN.md — Verification checkpoint (Wave 4)
 
 **Deliverables:**
 - YouTube Data API v3 integration (server-side via Supabase Edge Functions)
@@ -79,11 +79,11 @@ Plans:
 - REQ-DM-002
 
 **Success Criteria:**
-- [ ] Clicking channel shows its videos
-- [ ] Only videos >= 3 minutes displayed
-- [ ] Video metadata (thumbnail, duration, views, date) displays correctly
-- [ ] Click opens YouTube in new tab
-- [ ] Refresh button updates videos
+- [x] Clicking channel shows its videos
+- [x] Only videos >= 3 minutes displayed
+- [x] Video metadata (thumbnail, duration, views, date) displays correctly
+- [x] Click opens YouTube in new tab
+- [x] Refresh button updates videos
 
 ---
 
