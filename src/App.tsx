@@ -1,13 +1,48 @@
+import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import { Toaster } from 'sonner'
 import { Nav } from './components/Nav'
 import { ChannelsPage } from './pages/ChannelsPage'
 import { ChannelDetailPage } from './pages/ChannelDetailPage'
 import { IdeasPage } from './pages/IdeasPage'
+import { supabase } from './lib/supabase'
 
 export function App() {
-  // TODO: Get actual ideas count from state/API in Phase 3
-  const ideasCount = 0
+  const [ideasCount, setIdeasCount] = useState(0)
+
+  // Fetch ideas count on mount and subscribe to real-time updates
+  useEffect(() => {
+    // Initial count fetch
+    const fetchCount = async () => {
+      const { count } = await supabase
+        .from('ideas')
+        .select('id', { count: 'exact', head: true })
+      setIdeasCount(count || 0)
+    }
+    fetchCount()
+
+    // Subscribe to real-time changes for count updates
+    const channelName = `ideas-count-${Date.now()}`
+    const subscription = supabase
+      .channel(channelName)
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'ideas',
+        },
+        () => {
+          // Refetch count on any change
+          fetchCount()
+        }
+      )
+      .subscribe()
+
+    return () => {
+      supabase.removeChannel(subscription)
+    }
+  }, [])
 
   return (
     <BrowserRouter>
