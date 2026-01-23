@@ -25,7 +25,7 @@ Progress: [██████░░░░] 50% overall (6/12 plans estimated)
 
 ## Next Actions
 
-1. Continue Wave 2 execution (01-04, 01-06, 01-07, 01-08)
+1. Continue Wave 2 execution (01-07, 01-08 remaining)
 2. Complete Phase 1: Foundation
 3. Run migration SQL in Supabase Dashboard
 4. Proceed to Phase 2: Video Retrieval
@@ -40,6 +40,7 @@ Progress: [██████░░░░] 50% overall (6/12 plans estimated)
 | 2026-01-23 | Completed 01-03-PLAN.md | Supabase client, types, and migration SQL |
 | 2026-01-23 | Completed 01-05-PLAN.md | Channel CRUD functions and useChannels hook with realtime |
 | 2026-01-23 | Completed 01-04-PLAN.md | Navigation and routing with React Router |
+| 2026-01-23 | Completed 01-06-PLAN.md | ChannelCard, ChannelGrid, ConfirmDialog components |
 
 ---
 
@@ -61,11 +62,13 @@ None
 | 2026-01-23 | Unique channel names for realtime | Avoids "already subscribed" errors when component remounts |
 | 2026-01-23 | Success/error objects from hook actions | Allows UI to handle errors gracefully without throwing |
 | 2026-01-23 | NavLink for navigation active states | Built-in isActive callback simplifies styling |
+| 2026-01-23 | Native dialog element for modals | Browser-native accessibility, focus trap, Escape key handling |
+| 2026-01-23 | forwardRef pattern for dialog control | Clean API to open/close dialog from parent components |
 
 ## Session Continuity
 
-Last session: 2026-01-23T09:31:41Z
-Stopped at: Completed 01-04-PLAN.md
+Last session: 2026-01-23T09:32:00Z
+Stopped at: Completed 01-06-PLAN.md
 Resume file: None (continue with remaining Wave 2 plans)
 
 ---
