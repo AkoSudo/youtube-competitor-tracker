@@ -7,9 +7,9 @@
 | Field | Value |
 |-------|-------|
 | Milestone | 1: MVP Release |
-| Phase | 2: Video Retrieval |
-| Status | Complete |
-| Last Updated | 2026-01-24 |
+| Phase | 3: Ideas System |
+| Status | In Progress |
+| Last Updated | 2026-01-23 |
 
 ## Phase Progress
 
@@ -17,16 +17,16 @@
 |-------|--------|------------|
 | Phase 1: Foundation | ✓ **Complete** | 100% (8/8 plans) |
 | Phase 2: Video Retrieval | ✓ **Complete** | 100% (6/6 plans) |
-| Phase 3: Ideas System | Ready | — |
+| Phase 3: Ideas System | **In Progress** | 20% (1/5 plans) |
 | Phase 4: Polish | Blocked | — |
 
-Progress: ██████████ 100% overall (14/14 plans)
+Progress: ███████████████░░░░░ 75% overall (15/20 plans)
 
 ## Next Actions
 
-1. Plan Phase 3: Ideas System
-2. Implement ideas table and CRUD
-3. Connect Save Idea button to ideas flow
+1. Execute 03-02: Ideas data layer (useIdeas hook)
+2. Execute 03-03: Save Idea modal component
+3. Execute 03-04: Ideas listing page
 
 ## Session History
 
@@ -41,6 +41,7 @@ Progress: ██████████ 100% overall (14/14 plans)
 | 2026-01-23 | Completed 02-05 | ChannelDetailPage with end-to-end video flow |
 | 2026-01-24 | Completed 02-06 | Phase 2 verification - Edge Function deployed, all requirements verified |
 | 2026-01-24 | Phase 2 Complete | Video retrieval system fully operational |
+| 2026-01-23 | Completed 03-01 | Ideas database foundation - migration and TypeScript types |
 
 ---
 
@@ -77,6 +78,9 @@ None
 | 2026-01-23 | Created VideoCard/VideoGrid in 02-05 | Plan 02-04 dependency blocking issue - created components to unblock execution |
 | 2026-01-24 | Deploy Edge Function with --no-verify-jwt | v1 has no auth, public access required for Edge Function |
 | 2026-01-24 | Handle resolution in Edge Function | Support @handle URLs by using forHandle API parameter with search fallback |
+| 2026-01-23 | Ideas immutable (no UPDATE) | Once saved, ideas cannot be edited - only deleted |
+| 2026-01-23 | MIN 10 char note constraint | Database-level validation ensures meaningful notes |
+| 2026-01-23 | added_by as TEXT | No auth in v1, user self-identifies by name |
 
 ---
 *Auto-generated state tracking file*
