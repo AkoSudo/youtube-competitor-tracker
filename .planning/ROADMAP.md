@@ -87,19 +87,19 @@ Plans:
 
 ---
 
-### Phase 3: Ideas System
+### Phase 3: Ideas System ✓ COMPLETE
 
 **Goal:** Full ideas management with save modal, ideas page, and real-time sync
 
-**Status:** Ready
-**Plans:** 5 plans in 4 waves
+**Status:** Complete (2026-01-24)
+**Plans:** 5/5 complete
 
 Plans:
-- [ ] 03-01-PLAN.md — Database schema + types (Wave 1)
-- [ ] 03-02-PLAN.md — Data layer + useIdeas hook (Wave 2)
-- [ ] 03-03-PLAN.md — SaveIdeaModal + ChannelDetailPage integration (Wave 3)
-- [ ] 03-04-PLAN.md — IdeaCard + IdeasPage with filtering (Wave 3)
-- [ ] 03-05-PLAN.md — Verification checkpoint (Wave 4)
+- [x] 03-01-PLAN.md — Database schema + types (Wave 1)
+- [x] 03-02-PLAN.md — Data layer + useIdeas hook (Wave 2)
+- [x] 03-03-PLAN.md — SaveIdeaModal + ChannelDetailPage integration (Wave 3)
+- [x] 03-04-PLAN.md — IdeaCard + IdeasPage with filtering (Wave 3)
+- [x] 03-05-PLAN.md — Verification checkpoint (Wave 4)
 
 **Deliverables:**
 - `ideas` table with video foreign key
@@ -118,11 +118,11 @@ Plans:
 - REQ-DM-003
 
 **Success Criteria:**
-- [ ] Can save idea with note from any video
-- [ ] Ideas page shows all ideas with source context
-- [ ] Delete works with real-time sync
-- [ ] Filter by channel works
-- [ ] Search filters by note/title
+- [x] Can save idea with note from any video
+- [x] Ideas page shows all ideas with source context
+- [x] Delete works with real-time sync
+- [x] Filter by channel works
+- [x] Search filters by note/title
 
 ---
 
