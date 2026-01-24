@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router'
+import { ErrorBoundary } from 'react-error-boundary'
 import { Toaster } from 'sonner'
 import { Nav } from './components/Nav'
+import { ErrorFallback } from './components/ErrorFallback'
 import { ChannelsPage } from './pages/ChannelsPage'
 import { ChannelDetailPage } from './pages/ChannelDetailPage'
 import { IdeasPage } from './pages/IdeasPage'
@@ -45,20 +47,22 @@ export function App() {
   }, [])
 
   return (
-    <BrowserRouter>
-      <div className="min-h-screen bg-[#0f0f0f] text-[#f1f1f1]">
-        <Nav ideasCount={ideasCount} />
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <BrowserRouter>
+        <div className="min-h-screen bg-[#0f0f0f] text-[#f1f1f1]">
+          <Nav ideasCount={ideasCount} />
 
-        <main>
-          <Routes>
-            <Route path="/" element={<ChannelsPage />} />
-            <Route path="/channels/:id" element={<ChannelDetailPage />} />
-            <Route path="/ideas" element={<IdeasPage />} />
-          </Routes>
-        </main>
+          <main>
+            <Routes>
+              <Route path="/" element={<ChannelsPage />} />
+              <Route path="/channels/:id" element={<ChannelDetailPage />} />
+              <Route path="/ideas" element={<IdeasPage />} />
+            </Routes>
+          </main>
 
-        <Toaster position="bottom-right" theme="dark" richColors />
-      </div>
-    </BrowserRouter>
+          <Toaster position="bottom-right" theme="dark" richColors />
+        </div>
+      </BrowserRouter>
+    </ErrorBoundary>
   )
 }
