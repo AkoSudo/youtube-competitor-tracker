@@ -130,6 +130,15 @@ Plans:
 
 **Goal:** Loading states, empty states, error handling, and performance optimization
 
+**Status:** Ready
+**Plans:** 4 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Skeleton components + EmptyState (Wave 1)
+- [ ] 04-02-PLAN.md — Error boundary + react-error-boundary (Wave 1)
+- [ ] 04-03-PLAN.md — Integrate skeletons and empty states into pages (Wave 2)
+- [ ] 04-04-PLAN.md — Performance measurement + verification (Wave 3)
+
 **Deliverables:**
 - Skeleton loaders for channels grid
 - Skeleton loaders for videos grid
