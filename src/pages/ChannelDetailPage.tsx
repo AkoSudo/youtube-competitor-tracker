@@ -5,6 +5,7 @@ import { supabase } from '../lib/supabase'
 import { useChannelVideos } from '../hooks/useChannelVideos'
 import { useIdeas } from '../hooks/useIdeas'
 import { VideoGrid } from '../components/VideoGrid'
+import { VideoCardSkeleton } from '../components/skeletons/VideoCardSkeleton'
 import { SaveIdeaModal, type SaveIdeaModalRef } from '../components/SaveIdeaModal'
 import { formatRelativeDate } from '../lib/formatters'
 import type { Channel, Video } from '../lib/types'
@@ -195,15 +196,8 @@ export function ChannelDetailPage() {
       {/* Videos grid */}
       {isLoading && videos.length === 0 ? (
         <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="animate-pulse">
-              <div className="aspect-video bg-[#272727] rounded-xl"></div>
-              <div className="mt-3 space-y-2">
-                <div className="h-4 bg-[#272727] rounded w-full"></div>
-                <div className="h-4 bg-[#272727] rounded w-3/4"></div>
-                <div className="h-3 bg-[#272727] rounded w-1/2"></div>
-              </div>
-            </div>
+          {Array.from({ length: 6 }).map((_, i) => (
+            <VideoCardSkeleton key={i} />
           ))}
         </div>
       ) : (
