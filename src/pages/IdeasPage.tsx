@@ -2,7 +2,51 @@ import { useState, useMemo, useRef, useEffect } from 'react'
 import { toast } from 'sonner'
 import { useIdeas } from '../hooks/useIdeas'
 import { IdeaCard } from '../components/IdeaCard'
+import { IdeaCardSkeleton } from '../components/skeletons/IdeaCardSkeleton'
+import { EmptyState } from '../components/EmptyState'
 import { ConfirmDialog, type ConfirmDialogRef } from '../components/ConfirmDialog'
+
+/**
+ * Lightbulb icon for empty ideas state.
+ */
+function LightbulbIcon() {
+  return (
+    <svg
+      className="w-full h-full"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+      />
+    </svg>
+  )
+}
+
+/**
+ * Search icon for filtered empty state.
+ */
+function SearchIcon() {
+  return (
+    <svg
+      className="w-full h-full"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+      />
+    </svg>
+  )
+}
 
 /**
  * Custom hook to debounce a value.
@@ -102,6 +146,13 @@ export function IdeasPage() {
     ? ideas.find(i => i.id === ideaToDelete)
     : null
 
+  // Clear all filters
+  const clearFilters = () => {
+    setSearchQuery('')
+    setChannelFilter('')
+    setMyIdeasOnly(false)
+  }
+
   return (
     <div className="max-w-7xl mx-auto p-4">
       {/* Header */}
@@ -183,23 +234,11 @@ export function IdeasPage() {
         </div>
       )}
 
-      {/* Loading State */}
+      {/* Loading State - Skeleton List */}
       {isLoading && (
         <div className="space-y-4">
-          {[1, 2, 3, 4].map(n => (
-            <div
-              key={n}
-              className="bg-[#272727] rounded-xl p-4 animate-pulse"
-            >
-              <div className="flex gap-4">
-                <div className="w-[120px] aspect-video bg-[#3f3f3f] rounded" />
-                <div className="flex-1 space-y-3">
-                  <div className="h-4 bg-[#3f3f3f] rounded w-3/4" />
-                  <div className="h-3 bg-[#3f3f3f] rounded w-1/2" />
-                  <div className="h-3 bg-[#3f3f3f] rounded w-1/3" />
-                </div>
-              </div>
-            </div>
+          {Array.from({ length: 4 }).map((_, i) => (
+            <IdeaCardSkeleton key={i} />
           ))}
         </div>
       )}
@@ -209,54 +248,22 @@ export function IdeasPage() {
         <>
           {ideas.length === 0 ? (
             // No ideas at all
-            <div className="text-center py-12">
-              <svg
-                className="w-16 h-16 mx-auto text-[#3f3f3f] mb-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
-              </svg>
-              <p className="text-[#aaaaaa]">
-                No ideas saved yet. Browse channel videos and save ideas you like.
-              </p>
-            </div>
+            <EmptyState
+              icon={<LightbulbIcon />}
+              title="No ideas saved yet"
+              description="Browse channel videos and save ideas you like."
+            />
           ) : filteredIdeas.length === 0 ? (
             // No results from filter
-            <div className="text-center py-12">
-              <svg
-                className="w-16 h-16 mx-auto text-[#3f3f3f] mb-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              <p className="text-[#aaaaaa]">
-                No ideas match your filters.
-              </p>
-              <button
-                onClick={() => {
-                  setSearchQuery('')
-                  setChannelFilter('')
-                  setMyIdeasOnly(false)
-                }}
-                className="mt-2 text-sm text-red-500 hover:text-red-400"
-              >
-                Clear filters
-              </button>
-            </div>
+            <EmptyState
+              icon={<SearchIcon />}
+              title="No ideas match your filters"
+              description="Try adjusting your search or filters."
+              action={{
+                label: "Clear filters",
+                onClick: clearFilters
+              }}
+            />
           ) : (
             // Ideas list
             <div className="space-y-4">
