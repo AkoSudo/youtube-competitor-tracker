@@ -1,7 +1,11 @@
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useChannels } from '../hooks/useChannels'
 import { EmptyState } from '../components/EmptyState'
 import { AnalyticsPageSkeleton } from '../components/skeletons/AnalyticsPageSkeleton'
+import { ChannelOverviewGrid } from '../components/ChannelOverviewGrid'
+import { supabase } from '../lib/supabase'
+import type { Video } from '../lib/types'
 
 /**
  * Bar chart icon for empty analytics state.
@@ -27,6 +31,29 @@ function BarChartIcon() {
 export function AnalyticsPage() {
   const { channels, isLoading, error } = useChannels()
   const navigate = useNavigate()
+  const [videos, setVideos] = useState<Video[]>([])
+  const [videosLoading, setVideosLoading] = useState(true)
+
+  // Fetch all videos for tracked channels
+  useEffect(() => {
+    async function fetchAllVideos() {
+      if (channels.length === 0) {
+        setVideosLoading(false)
+        return
+      }
+      const channelIds = channels.map(c => c.id)
+      const { data } = await supabase
+        .from('videos')
+        .select('*')
+        .in('channel_id', channelIds)
+        .order('published_at', { ascending: false })
+      setVideos(data || [])
+      setVideosLoading(false)
+    }
+    if (!isLoading) {
+      fetchAllVideos()
+    }
+  }, [channels, isLoading])
 
   // LOADING STATE - Show skeleton while fetching channels
   if (isLoading) {
@@ -77,18 +104,26 @@ export function AnalyticsPage() {
     )
   }
 
-  // CONTENT STATE - Show placeholder for future analytics
+  // CONTENT STATE - Show channel overview
+  // Build videosByChannel map
+  const videosByChannel = new Map<string, Video[]>()
+  for (const video of videos) {
+    const arr = videosByChannel.get(video.channel_id) || []
+    arr.push(video)
+    videosByChannel.set(video.channel_id, arr)
+  }
+
   return (
     <div className="max-w-7xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-6">Analytics</h1>
-      <div className="bg-[#272727] rounded-xl p-6 text-center">
-        <p className="text-[#aaaaaa] text-lg mb-2">
-          Analytics dashboard coming soon.
-        </p>
-        <p className="text-[#aaaaaa] text-sm">
-          Tracking {channels.length} channel{channels.length === 1 ? '' : 's'}
-        </p>
-      </div>
+      <section className="mb-8">
+        <h2 className="text-lg font-semibold mb-4 text-[#aaaaaa]">Channel Overview</h2>
+        <ChannelOverviewGrid
+          channels={channels}
+          videosByChannel={videosByChannel}
+          isLoading={videosLoading}
+        />
+      </section>
     </div>
   )
 }
