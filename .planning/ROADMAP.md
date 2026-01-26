@@ -79,11 +79,11 @@ Plans:
 4. Time filter applies to all analytics on the page with visual indicator
 5. Filtered view shows count of videos within the selected time period
 
-**Plans**: TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 07-01: TBD
-- [ ] 07-02: TBD
+- [ ] 07-01-PLAN.md — Create useSessionState hook and SortFilterControls component
+- [ ] 07-02-PLAN.md — Integrate sorting and filtering into AnalyticsPage
 
 ### Phase 8: Charts
 **Goal**: Users can visualize upload frequency patterns and duration vs performance relationships
@@ -129,7 +129,7 @@ Plans:
 | 4. Polish | v1.0 | 4/4 | Complete | 2026-01-24 |
 | 5. Foundation | v1.1 | 1/1 | Complete | 2026-01-26 |
 | 6. Channel Overview | v1.1 | 1/1 | Complete | 2026-01-26 |
-| 7. Video Analytics | v1.1 | 0/? | Not started | - |
+| 7. Video Analytics | v1.1 | 0/2 | Not started | - |
 | 8. Charts | v1.1 | 0/? | Not started | - |
 | 9. Polish | v1.1 | 0/? | Not started | - |
 
