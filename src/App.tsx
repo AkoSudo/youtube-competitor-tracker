@@ -7,6 +7,7 @@ import { ErrorFallback } from './components/ErrorFallback'
 import { ChannelsPage } from './pages/ChannelsPage'
 import { ChannelDetailPage } from './pages/ChannelDetailPage'
 import { IdeasPage } from './pages/IdeasPage'
+import { AnalyticsPage } from './pages/AnalyticsPage'
 import { supabase } from './lib/supabase'
 
 export function App() {
@@ -57,6 +58,7 @@ export function App() {
               <Route path="/" element={<ChannelsPage />} />
               <Route path="/channels/:id" element={<ChannelDetailPage />} />
               <Route path="/ideas" element={<IdeasPage />} />
+              <Route path="/analytics" element={<AnalyticsPage />} />
             </Routes>
           </main>
 
