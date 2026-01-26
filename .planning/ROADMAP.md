@@ -46,11 +46,10 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full details.
 3. Analytics page shows helpful empty state when user has no tracked channels
 4. Analytics page matches existing dark theme (#0f0f0f background, #272727 cards)
 
-**Plans**: TBD
+**Plans:** 1 plan
 
 Plans:
-- [ ] 05-01: TBD
-- [ ] 05-02: TBD
+- [ ] 05-01-PLAN.md — Analytics page with routing, navigation, loading skeleton, and empty state
 
 ### Phase 6: Channel Overview
 **Goal**: Users can see all tracked channels with key performance metrics at a glance
@@ -128,7 +127,7 @@ Plans:
 | 2. Channel Management | v1.0 | 3/3 | Complete | 2026-01-23 |
 | 3. Video & Ideas | v1.0 | 2/2 | Complete | 2026-01-24 |
 | 4. Polish | v1.0 | 4/4 | Complete | 2026-01-24 |
-| 5. Foundation | v1.1 | 0/? | Not started | - |
+| 5. Foundation | v1.1 | 0/1 | Planned | - |
 | 6. Channel Overview | v1.1 | 0/? | Not started | - |
 | 7. Video Analytics | v1.1 | 0/? | Not started | - |
 | 8. Charts | v1.1 | 0/? | Not started | - |
