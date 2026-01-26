@@ -8,6 +8,7 @@ import { AnalyticsPageSkeleton } from '../components/skeletons/AnalyticsPageSkel
 import { ChannelOverviewGrid } from '../components/ChannelOverviewGrid'
 import { SortFilterControls, type SortField, type SortDirection, type TimePeriod } from '../components/SortFilterControls'
 import { UploadFrequencyChart, DurationScatterChart } from '../components/charts'
+import { DataFreshnessIndicator } from '../components/DataFreshnessIndicator'
 import { supabase } from '../lib/supabase'
 import { formatViewCount, formatRelativeDate } from '../lib/formatters'
 import type { Video } from '../lib/types'
@@ -38,6 +39,7 @@ export function AnalyticsPage() {
   const navigate = useNavigate()
   const [videos, setVideos] = useState<Video[]>([])
   const [videosLoading, setVideosLoading] = useState(true)
+  const [videosFetchedAt, setVideosFetchedAt] = useState<Date | null>(null)
 
   // Session-persisted sort/filter state
   const [sortField, setSortField] = useSessionState<SortField>('analytics_sortField', 'published_at')
@@ -61,6 +63,7 @@ export function AnalyticsPage() {
         .in('channel_id', channelIds)
         .order('published_at', { ascending: false })
       setVideos(data || [])
+      setVideosFetchedAt(new Date())
       setVideosLoading(false)
     }
     if (!isLoading) {
@@ -199,7 +202,12 @@ export function AnalyticsPage() {
 
       {/* Charts Section */}
       <section className="mb-8">
-        <h2 className="text-lg font-semibold mb-4 text-[#aaaaaa]">Charts</h2>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-semibold text-[#aaaaaa]">Charts</h2>
+          {videosFetchedAt && !videosLoading && (
+            <DataFreshnessIndicator lastFetchedAt={videosFetchedAt} />
+          )}
+        </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Upload Frequency Chart */}
