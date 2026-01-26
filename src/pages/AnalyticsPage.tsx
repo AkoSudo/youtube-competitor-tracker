@@ -1,10 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router'
+import { subDays, isAfter } from 'date-fns'
 import { useChannels } from '../hooks/useChannels'
+import { useSessionState } from '../hooks/useSessionState'
 import { EmptyState } from '../components/EmptyState'
 import { AnalyticsPageSkeleton } from '../components/skeletons/AnalyticsPageSkeleton'
 import { ChannelOverviewGrid } from '../components/ChannelOverviewGrid'
+import { SortFilterControls, type SortField, type SortDirection, type TimePeriod } from '../components/SortFilterControls'
 import { supabase } from '../lib/supabase'
+import { formatViewCount, formatRelativeDate } from '../lib/formatters'
 import type { Video } from '../lib/types'
 
 /**
@@ -33,6 +37,11 @@ export function AnalyticsPage() {
   const navigate = useNavigate()
   const [videos, setVideos] = useState<Video[]>([])
   const [videosLoading, setVideosLoading] = useState(true)
+
+  // Session-persisted sort/filter state
+  const [sortField, setSortField] = useSessionState<SortField>('analytics_sortField', 'published_at')
+  const [sortDirection, setSortDirection] = useSessionState<SortDirection>('analytics_sortDir', 'desc')
+  const [timePeriod, setTimePeriod] = useSessionState<TimePeriod>('analytics_timePeriod', '30d')
 
   // Fetch all videos for tracked channels
   useEffect(() => {
