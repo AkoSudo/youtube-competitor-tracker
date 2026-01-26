@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { toast } from 'sonner'
 import { supabase } from '../lib/supabase'
 import { useChannelVideos } from '../hooks/useChannelVideos'
@@ -7,8 +7,11 @@ import { useIdeas } from '../hooks/useIdeas'
 import { VideoGrid } from '../components/VideoGrid'
 import { VideoCardSkeleton } from '../components/skeletons/VideoCardSkeleton'
 import { SaveIdeaModal, type SaveIdeaModalRef } from '../components/SaveIdeaModal'
+import { UploadFrequencyChart } from '../components/charts/UploadFrequencyChart'
 import { formatRelativeDate } from '../lib/formatters'
 import type { Channel, Video } from '../lib/types'
+
+type TimePeriod = '7d' | '30d' | '90d' | 'all'
 
 /**
  * Channel detail page showing channel info and videos.
@@ -19,6 +22,7 @@ export function ChannelDetailPage() {
   const { id } = useParams<{ id: string }>()
   const [channel, setChannel] = useState<Channel | null>(null)
   const [channelLoading, setChannelLoading] = useState(true)
+  const [topVideosPeriod, setTopVideosPeriod] = useState<TimePeriod>('30d')
 
   const { videos, isLoading, error, cached, fetchedAt, refresh } = useChannelVideos(
     id || null,
@@ -27,6 +31,25 @@ export function ChannelDetailPage() {
 
   const modalRef = useRef<SaveIdeaModalRef>(null)
   const { addIdea } = useIdeas()
+
+  // Filter and sort top 5 videos based on time period
+  const topVideos = useMemo(() => {
+    const now = new Date()
+    let cutoffDate: Date | null = null
+
+    if (topVideosPeriod !== 'all') {
+      const days = topVideosPeriod === '7d' ? 7 : topVideosPeriod === '30d' ? 30 : 90
+      cutoffDate = new Date(now.getTime() - days * 24 * 60 * 60 * 1000)
+    }
+
+    const filtered = cutoffDate
+      ? videos.filter(v => new Date(v.published_at) >= cutoffDate!)
+      : videos
+
+    return [...filtered]
+      .sort((a, b) => b.view_count - a.view_count)
+      .slice(0, 5)
+  }, [videos, topVideosPeriod])
 
   // Fetch channel details
   useEffect(() => {
@@ -152,6 +175,70 @@ export function ChannelDetailPage() {
             </p>
           )}
         </div>
+      </div>
+
+      {/* Upload Frequency Chart */}
+      <div className="bg-[#1a1a1a] rounded-xl p-6 mb-8">
+        <h2 className="text-lg font-semibold text-[#f1f1f1] mb-4">Upload Frequency</h2>
+        <UploadFrequencyChart videos={videos} />
+      </div>
+
+      {/* Top 5 Performing Videos */}
+      <div className="bg-[#1a1a1a] rounded-xl p-6 mb-8">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-semibold text-[#f1f1f1]">Top Performing Videos</h2>
+          <div className="flex gap-1">
+            {(['7d', '30d', '90d', 'all'] as const).map((period) => (
+              <button
+                key={period}
+                onClick={() => setTopVideosPeriod(period)}
+                className={`px-3 py-1 text-sm rounded-lg transition-colors ${
+                  topVideosPeriod === period
+                    ? 'bg-red-600 text-white'
+                    : 'bg-[#272727] text-[#aaaaaa] hover:bg-[#3f3f3f] hover:text-white'
+                }`}
+              >
+                {period === 'all' ? 'All Time' : period}
+              </button>
+            ))}
+          </div>
+        </div>
+        {topVideos.length === 0 ? (
+          <p className="text-[#aaaaaa] text-center py-8">
+            No videos found in this time period
+          </p>
+        ) : (
+          <div className="space-y-3">
+            {topVideos.map((video, index) => (
+              <a
+                key={video.id}
+                href={`https://www.youtube.com/watch?v=${video.youtube_id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-3 rounded-lg bg-[#272727] hover:bg-[#3f3f3f] transition-colors"
+              >
+                <span className="text-lg font-bold text-[#aaaaaa] w-6 text-center">
+                  {index + 1}
+                </span>
+                <img
+                  src={video.thumbnail_url}
+                  alt={video.title}
+                  className="w-24 h-14 object-cover rounded"
+                />
+                <div className="flex-1 min-w-0">
+                  <p className="text-[#f1f1f1] font-medium line-clamp-2">{video.title}</p>
+                  <p className="text-sm text-[#aaaaaa]">
+                    {new Intl.NumberFormat('en-US', {
+                      notation: 'compact',
+                      compactDisplay: 'short',
+                    }).format(video.view_count)}{' '}
+                    views
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Videos header with refresh */}

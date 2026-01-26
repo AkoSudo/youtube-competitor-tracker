@@ -56,18 +56,6 @@ export function Nav({ ideasCount = 0 }: NavProps) {
               )}
             </NavLink>
 
-            <NavLink
-              to="/analytics"
-              className={({ isActive }) =>
-                `px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'bg-[#3f3f3f] text-white'
-                    : 'text-[#aaaaaa] hover:bg-[#3f3f3f] hover:text-white'
-                }`
-              }
-            >
-              Analytics
-            </NavLink>
           </div>
         </div>
       </div>

@@ -56,14 +56,23 @@ Teams can track competitor YouTube channels and capture content ideas together i
 - [x] Real-time sync < 2s latency — v1.0
 - [x] Web Vitals measurement — v1.0
 
+**v1.1 Channel Analytics (Shipped 2026-01-26)**
+
+**Channel-Specific Analytics**
+
+- [x] Upload frequency chart showing day-of-week patterns per channel — v1.1
+- [x] Top 5 performing videos section with time filter (7d/30d/90d/all) — v1.1
+- [x] Chart axis labels and empty states — v1.1
+- [x] Motion preference accessibility (respects prefers-reduced-motion) — v1.1
+
 ### Active
 
-(None — run `/gsd:new-milestone` to plan v1.1)
+(None — run `/gsd:new-milestone` to plan v1.2)
 
 ### Out of Scope
 
 - User authentication — v1 is open access, auth planned for v2
-- Analytics dashboard — no charts/trends in v1
+- Cross-channel analytics dashboard — removed in v1.1 restructuring (per-channel analytics preferred)
 - Notifications/alerts — no email/Slack alerts
 - Mobile native apps — web-first approach
 - Other platforms (TikTok, Instagram) — YouTube only
@@ -76,12 +85,13 @@ Teams can track competitor YouTube channels and capture content ideas together i
 - Team collaboration is key — everything syncs in real-time
 - Focus on long-form content strategy (Shorts excluded)
 
-**Current State (v1.0):**
+**Current State (v1.1):**
 
-- 2,652 lines of TypeScript across 32 files
-- Tech stack: React 18 + Vite, Tailwind CSS v4, Supabase, react-error-boundary, web-vitals
+- 2,939 lines of TypeScript
+- Tech stack: React 18 + Vite, Tailwind CSS v4, Supabase, Recharts, react-error-boundary, web-vitals
 - Database: 3 tables (channels, videos, ideas) with FK cascades and real-time subscriptions
 - Edge Function: fetch-channel-videos for YouTube API integration
+- Channel Detail page includes upload frequency chart and top performing videos
 
 ## Constraints
 
@@ -103,7 +113,9 @@ Teams can track competitor YouTube channels and capture content ideas together i
 | Native dialog for modals        | Browser accessibility, focus trap         | ✓ Shipped — excellent a11y        |
 | 24-hour cache TTL               | Enables ~3,333 refreshes/day within quota | ✓ Shipped — quota-efficient       |
 | motion-safe animations          | Respects prefers-reduced-motion           | ✓ Shipped — accessible            |
+| Recharts for charts             | Good React integration, TypeScript support | ✓ Shipped — works well            |
+| Channel-specific analytics      | Simpler than cross-channel, more focused  | ✓ Shipped — cleaner UX            |
 
 ---
 
-_Last updated: 2026-01-24 after v1.0 milestone_
+_Last updated: 2026-01-26 after v1.1 milestone_

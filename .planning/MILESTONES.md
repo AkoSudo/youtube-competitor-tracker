@@ -1,5 +1,31 @@
 # Project Milestones: YouTube Competitor Tracker
 
+## v1.1 Channel Analytics (Shipped: 2026-01-26)
+
+**Delivered:** Channel-specific analytics with upload frequency visualization and top performing videos section, integrated into Channel Detail page.
+
+**Phases completed:** 5-9 (10 plans total)
+
+**Key accomplishments:**
+
+- Upload Frequency Chart showing day-of-week upload patterns per channel
+- Top 5 Performing Videos section with time filter (7d/30d/90d/all)
+- Motion preference accessibility (respects prefers-reduced-motion)
+- Chart axis labels and context-aware empty states
+- Note: Originally built as dedicated Analytics page, then restructured per user request to channel-specific analytics
+
+**Stats:**
+
+- 2,939 lines of TypeScript (total codebase)
+- 5 phases, 10 plans
+- 2 days for original implementation + restructuring
+
+**Git range:** `feat(05-01)` → `feat(09-02)`
+
+**What's next:** TBD — run `/gsd:new-milestone` to plan v1.2
+
+---
+
 ## v1.0 MVP Release (Shipped: 2026-01-24)
 
 **Delivered:** Real-time collaborative YouTube competitor tracker with channel management, video retrieval, and ideas system.
