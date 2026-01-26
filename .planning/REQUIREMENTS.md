@@ -56,10 +56,10 @@ Requirements for Analytics Dashboard milestone. Each maps to roadmap phases.
 
 ### Polish
 
-- [ ] **POLI-01**: All charts have proper axis labels and legends
-- [ ] **POLI-02**: Data freshness indicator shows when data was last fetched
-- [ ] **POLI-03**: Empty chart states show helpful messaging
-- [ ] **POLI-04**: Charts respect prefers-reduced-motion for animations
+- [x] **POLI-01**: All charts have proper axis labels and legends
+- [x] **POLI-02**: Data freshness indicator shows when data was last fetched
+- [x] **POLI-03**: Empty chart states show helpful messaging
+- [x] **POLI-04**: Charts respect prefers-reduced-motion for animations
 
 ## Future Requirements
 
@@ -126,10 +126,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DURA-03 | Phase 8 | Complete |
 | DURA-04 | Phase 8 | Complete |
 | DURA-05 | Phase 8 | Complete |
-| POLI-01 | Phase 9 | Pending |
-| POLI-02 | Phase 9 | Pending |
-| POLI-03 | Phase 9 | Pending |
-| POLI-04 | Phase 9 | Pending |
+| POLI-01 | Phase 9 | Complete |
+| POLI-02 | Phase 9 | Complete |
+| POLI-03 | Phase 9 | Complete |
+| POLI-04 | Phase 9 | Complete |
 
 **Coverage:**
 - v1.1 requirements: 33 total
@@ -138,4 +138,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-26*
-*Last updated: 2026-01-26 - Phase 8 requirements (FREQ-*, DURA-*) marked complete*
+*Last updated: 2026-01-26 - Phase 9 requirements (POLI-*) marked complete - v1.1 milestone complete*

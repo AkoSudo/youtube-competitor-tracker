@@ -3,7 +3,7 @@
 ## Milestones
 
 - v1.0 MVP - Phases 1-4 (shipped 2026-01-24)
-- v1.1 Analytics Dashboard - Phases 5-9 (in progress)
+- v1.1 Analytics Dashboard - Phases 5-9 (complete)
 
 ## Overview
 
@@ -23,7 +23,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full details.
 
 </details>
 
-### v1.1 Analytics Dashboard (In Progress)
+### v1.1 Analytics Dashboard (Complete)
 
 **Milestone Goal:** Enable users to analyze competitor performance patterns through visual analytics
 
@@ -31,7 +31,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full details.
 - [x] **Phase 6: Channel Overview** - At-a-glance channel cards with key metrics
 - [x] **Phase 7: Video Analytics** - Sorting and time period filtering for videos
 - [x] **Phase 8: Charts** - Upload frequency and duration analysis visualizations
-- [ ] **Phase 9: Polish** - Labels, freshness indicators, empty states, motion
+- [x] **Phase 9: Polish** - Labels, freshness indicators, empty states, motion
 
 ## Phase Details
 
@@ -118,8 +118,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 09-01-PLAN.md — Create usePrefersReducedMotion hook and DataFreshnessIndicator component
-- [ ] 09-02-PLAN.md — Polish charts with axis labels, empty states, motion control, and integrate freshness indicator
+- [x] 09-01-PLAN.md — Create usePrefersReducedMotion hook and DataFreshnessIndicator component
+- [x] 09-02-PLAN.md — Polish charts with axis labels, empty states, motion control, and integrate freshness indicator
 
 ## Progress
 
@@ -133,7 +133,7 @@ Plans:
 | 6. Channel Overview | v1.1 | 1/1 | Complete | 2026-01-26 |
 | 7. Video Analytics | v1.1 | 2/2 | Complete | 2026-01-26 |
 | 8. Charts | v1.1 | 3/3 | Complete | 2026-01-26 |
-| 9. Polish | v1.1 | 0/2 | Not started | - |
+| 9. Polish | v1.1 | 2/2 | Complete | 2026-01-26 |
 
 ---
 *Roadmap created: 2026-01-26*
