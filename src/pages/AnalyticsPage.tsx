@@ -64,6 +64,36 @@ export function AnalyticsPage() {
     }
   }, [channels, isLoading])
 
+  // Compute filtered and sorted videos
+  const filteredAndSortedVideos = useMemo(() => {
+    // Step 1: Filter by time period
+    let filtered = videos
+    if (timePeriod !== 'all') {
+      const daysMap: Record<Exclude<TimePeriod, 'all'>, number> = {
+        '7d': 7,
+        '30d': 30,
+        '90d': 90,
+      }
+      const cutoffDate = subDays(new Date(), daysMap[timePeriod])
+      filtered = videos.filter(video =>
+        isAfter(new Date(video.published_at), cutoffDate)
+      )
+    }
+
+    // Step 2: Sort (spread to avoid mutation)
+    const sorted = [...filtered].sort((a, b) => {
+      let comparison: number
+      if (sortField === 'published_at') {
+        comparison = new Date(a.published_at).getTime() - new Date(b.published_at).getTime()
+      } else {
+        comparison = a.view_count - b.view_count
+      }
+      return sortDirection === 'asc' ? comparison : -comparison
+    })
+
+    return sorted
+  }, [videos, timePeriod, sortField, sortDirection])
+
   // LOADING STATE - Show skeleton while fetching channels
   if (isLoading) {
     return (
