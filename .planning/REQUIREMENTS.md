@@ -40,19 +40,19 @@ Requirements for Analytics Dashboard milestone. Each maps to roadmap phases.
 
 ### Upload Frequency Patterns
 
-- [ ] **FREQ-01**: User can view upload frequency as day-of-week distribution
-- [ ] **FREQ-02**: Chart shows which days competitors upload most frequently
-- [ ] **FREQ-03**: User can view combined frequency across all channels
-- [ ] **FREQ-04**: User can filter frequency chart by specific channel
-- [ ] **FREQ-05**: Chart displays using colors accessible on dark theme
+- [x] **FREQ-01**: User can view upload frequency as day-of-week distribution
+- [x] **FREQ-02**: Chart shows which days competitors upload most frequently
+- [x] **FREQ-03**: User can view combined frequency across all channels
+- [x] **FREQ-04**: User can filter frequency chart by specific channel
+- [x] **FREQ-05**: Chart displays using colors accessible on dark theme
 
 ### Video Duration Analysis
 
-- [ ] **DURA-01**: User can view video duration vs views as scatter plot
-- [ ] **DURA-02**: Each dot represents a video (x: duration, y: views)
-- [ ] **DURA-03**: User can hover/tap dot to see video details (title, channel)
-- [ ] **DURA-04**: Chart includes visual indicator of average duration
-- [ ] **DURA-05**: Chart is responsive and readable on mobile
+- [x] **DURA-01**: User can view video duration vs views as scatter plot
+- [x] **DURA-02**: Each dot represents a video (x: duration, y: views)
+- [x] **DURA-03**: User can hover/tap dot to see video details (title, channel)
+- [x] **DURA-04**: Chart includes visual indicator of average duration
+- [x] **DURA-05**: Chart is responsive and readable on mobile
 
 ### Polish
 
@@ -116,16 +116,16 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TIME-03 | Phase 7 | Complete |
 | TIME-04 | Phase 7 | Complete |
 | TIME-05 | Phase 7 | Complete |
-| FREQ-01 | Phase 8 | Pending |
-| FREQ-02 | Phase 8 | Pending |
-| FREQ-03 | Phase 8 | Pending |
-| FREQ-04 | Phase 8 | Pending |
-| FREQ-05 | Phase 8 | Pending |
-| DURA-01 | Phase 8 | Pending |
-| DURA-02 | Phase 8 | Pending |
-| DURA-03 | Phase 8 | Pending |
-| DURA-04 | Phase 8 | Pending |
-| DURA-05 | Phase 8 | Pending |
+| FREQ-01 | Phase 8 | Complete |
+| FREQ-02 | Phase 8 | Complete |
+| FREQ-03 | Phase 8 | Complete |
+| FREQ-04 | Phase 8 | Complete |
+| FREQ-05 | Phase 8 | Complete |
+| DURA-01 | Phase 8 | Complete |
+| DURA-02 | Phase 8 | Complete |
+| DURA-03 | Phase 8 | Complete |
+| DURA-04 | Phase 8 | Complete |
+| DURA-05 | Phase 8 | Complete |
 | POLI-01 | Phase 9 | Pending |
 | POLI-02 | Phase 9 | Pending |
 | POLI-03 | Phase 9 | Pending |
@@ -138,4 +138,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-26*
-*Last updated: 2026-01-26 - Traceability updated with phase assignments*
+*Last updated: 2026-01-26 - Phase 8 requirements (FREQ-*, DURA-*) marked complete*

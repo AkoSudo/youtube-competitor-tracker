@@ -30,7 +30,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full details.
 - [x] **Phase 5: Foundation** - Analytics page shell, routing, types, chart library setup
 - [x] **Phase 6: Channel Overview** - At-a-glance channel cards with key metrics
 - [x] **Phase 7: Video Analytics** - Sorting and time period filtering for videos
-- [ ] **Phase 8: Charts** - Upload frequency and duration analysis visualizations
+- [x] **Phase 8: Charts** - Upload frequency and duration analysis visualizations
 - [ ] **Phase 9: Polish** - Labels, freshness indicators, empty states, motion
 
 ## Phase Details
@@ -100,9 +100,9 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
-- [ ] 08-01-PLAN.md — Install Recharts, add chart CSS variables, create chartUtils.ts
-- [ ] 08-02-PLAN.md — Create UploadFrequencyChart and DurationScatterChart components
-- [ ] 08-03-PLAN.md — Integrate charts into AnalyticsPage with channel filter
+- [x] 08-01-PLAN.md — Install Recharts, add chart CSS variables, create chartUtils.ts
+- [x] 08-02-PLAN.md — Create UploadFrequencyChart and DurationScatterChart components
+- [x] 08-03-PLAN.md — Integrate charts into AnalyticsPage with channel filter
 
 ### Phase 9: Polish
 **Goal**: Analytics dashboard is production-ready with proper labels, indicators, and accessibility
@@ -131,7 +131,7 @@ Plans:
 | 5. Foundation | v1.1 | 1/1 | Complete | 2026-01-26 |
 | 6. Channel Overview | v1.1 | 1/1 | Complete | 2026-01-26 |
 | 7. Video Analytics | v1.1 | 2/2 | Complete | 2026-01-26 |
-| 8. Charts | v1.1 | 0/3 | Not started | - |
+| 8. Charts | v1.1 | 3/3 | Complete | 2026-01-26 |
 | 9. Polish | v1.1 | 0/? | Not started | - |
 
 ---
