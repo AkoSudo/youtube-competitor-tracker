@@ -4,33 +4,40 @@
 
 ## Project Reference
 
-See: `.planning/PROJECT.md` (updated 2026-01-24)
+See: `.planning/PROJECT.md` (updated 2026-01-26)
 
-**Core value:** Real-time competitor tracking and idea capture
-**Current focus:** v1.0 MVP shipped — planning next milestone
+**Core value:** Spot content opportunities by analyzing competitor performance patterns
+**Current focus:** v1.1 Analytics Dashboard
 
 ## Current Position
 
 | Field | Value |
 |-------|-------|
-| Milestone | v1.0 MVP Release |
-| Status | SHIPPED |
-| Last Activity | 2026-01-24 — v1.0 milestone complete |
+| Milestone | v1.1 Analytics Dashboard |
+| Phase | Not started (defining requirements) |
+| Status | Defining requirements |
+| Last Activity | 2026-01-26 — Milestone v1.1 started |
 
-## Milestone Summary
+## Milestone Goals
+
+**v1.1 Analytics Dashboard**
+
+Target features:
+- Channel performance overview
+- Video sorting (most recent, most views)
+- Upload frequency patterns
+- Video duration analysis
+- View velocity insights
+
+Core outcome: Help teams spot content opportunities
+
+## Previous Milestone
 
 **v1.0 MVP Release** — Shipped 2026-01-24
 
 - 4 phases, 23 plans, 47 requirements
-- Channel management with real-time sync
-- Video retrieval with YouTube API + Shorts filtering
-- Ideas system with filtering and notifications
-- Polish with skeletons, empty states, error boundary
-
-## Next Actions
-
-1. Run `/gsd:new-milestone` to plan v1.1
-2. Consider: User authentication, analytics, additional features
+- Channel management, video retrieval, ideas system
+- Full details in `.planning/milestones/`
 
 ## Archived
 
@@ -39,4 +46,4 @@ See: `.planning/PROJECT.md` (updated 2026-01-24)
 - `.planning/milestones/v1.0-MILESTONE-AUDIT.md` — Verification report
 
 ---
-*Updated: 2026-01-24 — v1.0 milestone complete*
+*Updated: 2026-01-26 — Milestone v1.1 started*

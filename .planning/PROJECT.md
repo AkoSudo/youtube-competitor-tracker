@@ -53,12 +53,20 @@ Teams can track competitor YouTube channels and capture content ideas together i
 
 ### Active
 
-(None — run `/gsd:new-milestone` to plan v1.1)
+**v1.1 Analytics Dashboard (Current Milestone)**
+
+**Analytics Overview**
+- [ ] Channel performance overview — quick glance at all tracked channels
+- [ ] Video performance with sorting — most recent, most views filters
+- [ ] Upload frequency patterns — when competitors post
+- [ ] Video duration analysis — what video lengths perform best
+- [ ] View velocity insights — how fast videos gain views after publishing
 
 ### Out of Scope
 
 - User authentication — v1 is open access, auth planned for v2
-- Analytics dashboard — no charts/trends in v1
+- Idea effectiveness tracking — defer to future milestone
+- Historical data storage — requires new data architecture
 - Notifications/alerts — no email/Slack alerts
 - Mobile native apps — web-first approach
 - Other platforms (TikTok, Instagram) — YouTube only
@@ -98,5 +106,16 @@ Teams can track competitor YouTube channels and capture content ideas together i
 | 24-hour cache TTL | Enables ~3,333 refreshes/day within quota | ✓ Shipped — quota-efficient |
 | motion-safe animations | Respects prefers-reduced-motion | ✓ Shipped — accessible |
 
+## Current Milestone: v1.1 Analytics Dashboard
+
+**Goal:** Help teams spot content opportunities by analyzing competitor performance patterns.
+
+**Target features:**
+- Channel performance overview with key metrics
+- Video sorting (most recent, most views)
+- Upload frequency patterns (posting schedules)
+- Video duration analysis (what lengths perform)
+- View velocity (how fast videos gain traction)
+
 ---
-*Last updated: 2026-01-24 after v1.0 milestone*
+*Last updated: 2026-01-26 after v1.1 milestone start*
