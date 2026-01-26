@@ -15,11 +15,11 @@ See: `.planning/PROJECT.md` (updated 2026-01-26)
 |-------|-------|
 | Milestone | v1.1 Analytics Dashboard |
 | Phase | 8 of 9 (Charts) |
-| Plan | 1 of 3 |
+| Plan | 2 of 3 |
 | Status | In progress |
-| Last Activity | 2026-01-26 - Completed 08-01-PLAN.md |
+| Last Activity | 2026-01-26 - Completed 08-02-PLAN.md |
 
-Progress: [████████████████████████████░░░░░░░░░░░░░░] 60% (v1.0: 22 plans, v1.1: 5/TBD plans)
+Progress: [██████████████████████████████░░░░░░░░░░░░] 63% (v1.0: 22 plans, v1.1: 6/TBD plans)
 
 ## Performance Metrics
 
@@ -38,9 +38,9 @@ Progress: [███████████████████████
 | 4. Polish | 4 | 32 min | 8 min |
 
 **Velocity (v1.1 in progress):**
-- Total plans completed: 5
+- Total plans completed: 6
 - Average duration: 2 min
-- Total execution time: 9 min
+- Total execution time: 12 min
 
 **By Phase (v1.1):**
 
@@ -49,7 +49,7 @@ Progress: [███████████████████████
 | 5. Foundation | 1 | 2 min | 2 min |
 | 6. Channel Overview | 1 | 2 min | 2 min |
 | 7. Video Analytics | 2 | 4 min | 2 min |
-| 8. Charts | 1 | 1 min | 1 min |
+| 8. Charts | 2 | 4 min | 2 min |
 
 ## Accumulated Context
 
@@ -75,6 +75,8 @@ Recent decisions affecting current work:
 - [07-02]: Filter then sort with spread to avoid mutation
 - [08-01]: Chart colors use WCAG 3:1 contrast ratios against dark background
 - [08-01]: Data transformation functions separated from chart components
+- [08-02]: Use TooltipContentProps (not TooltipProps) for custom Recharts tooltips
+- [08-02]: Pass tooltip as function reference to Tooltip content prop (not JSX element)
 
 ### Pending Todos
 
@@ -87,8 +89,8 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-26
-Stopped at: Completed 08-01-PLAN.md
+Stopped at: Completed 08-02-PLAN.md
 Resume file: None
 
 ---
-*Updated: 2026-01-26 - Completed 08-01-PLAN.md*
+*Updated: 2026-01-26 - Completed 08-02-PLAN.md*
