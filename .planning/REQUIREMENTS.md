@@ -97,45 +97,45 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ANLY-01 | TBD | Pending |
-| ANLY-02 | TBD | Pending |
-| ANLY-03 | TBD | Pending |
-| ANLY-04 | TBD | Pending |
-| CHAN-01 | TBD | Pending |
-| CHAN-02 | TBD | Pending |
-| CHAN-03 | TBD | Pending |
-| CHAN-04 | TBD | Pending |
-| CHAN-05 | TBD | Pending |
-| SORT-01 | TBD | Pending |
-| SORT-02 | TBD | Pending |
-| SORT-03 | TBD | Pending |
-| SORT-04 | TBD | Pending |
-| SORT-05 | TBD | Pending |
-| TIME-01 | TBD | Pending |
-| TIME-02 | TBD | Pending |
-| TIME-03 | TBD | Pending |
-| TIME-04 | TBD | Pending |
-| TIME-05 | TBD | Pending |
-| FREQ-01 | TBD | Pending |
-| FREQ-02 | TBD | Pending |
-| FREQ-03 | TBD | Pending |
-| FREQ-04 | TBD | Pending |
-| FREQ-05 | TBD | Pending |
-| DURA-01 | TBD | Pending |
-| DURA-02 | TBD | Pending |
-| DURA-03 | TBD | Pending |
-| DURA-04 | TBD | Pending |
-| DURA-05 | TBD | Pending |
-| POLI-01 | TBD | Pending |
-| POLI-02 | TBD | Pending |
-| POLI-03 | TBD | Pending |
-| POLI-04 | TBD | Pending |
+| ANLY-01 | Phase 5 | Pending |
+| ANLY-02 | Phase 5 | Pending |
+| ANLY-03 | Phase 5 | Pending |
+| ANLY-04 | Phase 5 | Pending |
+| CHAN-01 | Phase 6 | Pending |
+| CHAN-02 | Phase 6 | Pending |
+| CHAN-03 | Phase 6 | Pending |
+| CHAN-04 | Phase 6 | Pending |
+| CHAN-05 | Phase 6 | Pending |
+| SORT-01 | Phase 7 | Pending |
+| SORT-02 | Phase 7 | Pending |
+| SORT-03 | Phase 7 | Pending |
+| SORT-04 | Phase 7 | Pending |
+| SORT-05 | Phase 7 | Pending |
+| TIME-01 | Phase 7 | Pending |
+| TIME-02 | Phase 7 | Pending |
+| TIME-03 | Phase 7 | Pending |
+| TIME-04 | Phase 7 | Pending |
+| TIME-05 | Phase 7 | Pending |
+| FREQ-01 | Phase 8 | Pending |
+| FREQ-02 | Phase 8 | Pending |
+| FREQ-03 | Phase 8 | Pending |
+| FREQ-04 | Phase 8 | Pending |
+| FREQ-05 | Phase 8 | Pending |
+| DURA-01 | Phase 8 | Pending |
+| DURA-02 | Phase 8 | Pending |
+| DURA-03 | Phase 8 | Pending |
+| DURA-04 | Phase 8 | Pending |
+| DURA-05 | Phase 8 | Pending |
+| POLI-01 | Phase 9 | Pending |
+| POLI-02 | Phase 9 | Pending |
+| POLI-03 | Phase 9 | Pending |
+| POLI-04 | Phase 9 | Pending |
 
 **Coverage:**
 - v1.1 requirements: 33 total
-- Mapped to phases: 0
-- Unmapped: 33 (pending roadmap creation)
+- Mapped to phases: 33
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-01-26*
-*Last updated: 2026-01-26 after initial definition*
+*Last updated: 2026-01-26 - Traceability updated with phase assignments*
