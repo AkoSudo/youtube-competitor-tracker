@@ -16,11 +16,11 @@ Requirements for Analytics Dashboard milestone. Each maps to roadmap phases.
 
 ### Channel Overview
 
-- [ ] **CHAN-01**: User can view all tracked channels as overview cards
-- [ ] **CHAN-02**: Each channel card displays subscriber count
-- [ ] **CHAN-03**: Each channel card displays total video count (from fetched videos)
-- [ ] **CHAN-04**: Each channel card displays latest upload date
-- [ ] **CHAN-05**: Channel cards are responsive (grid layout: 1 col mobile, 2 tablet, 3+ desktop)
+- [x] **CHAN-01**: User can view all tracked channels as overview cards
+- [x] **CHAN-02**: Each channel card displays subscriber count
+- [x] **CHAN-03**: Each channel card displays total video count (from fetched videos)
+- [x] **CHAN-04**: Each channel card displays latest upload date
+- [x] **CHAN-05**: Channel cards are responsive (grid layout: 1 col mobile, 2 tablet, 3+ desktop)
 
 ### Video Sorting
 
@@ -101,11 +101,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ANLY-02 | Phase 5 | Complete |
 | ANLY-03 | Phase 5 | Complete |
 | ANLY-04 | Phase 5 | Complete |
-| CHAN-01 | Phase 6 | Pending |
-| CHAN-02 | Phase 6 | Pending |
-| CHAN-03 | Phase 6 | Pending |
-| CHAN-04 | Phase 6 | Pending |
-| CHAN-05 | Phase 6 | Pending |
+| CHAN-01 | Phase 6 | Complete |
+| CHAN-02 | Phase 6 | Complete |
+| CHAN-03 | Phase 6 | Complete |
+| CHAN-04 | Phase 6 | Complete |
+| CHAN-05 | Phase 6 | Complete |
 | SORT-01 | Phase 7 | Pending |
 | SORT-02 | Phase 7 | Pending |
 | SORT-03 | Phase 7 | Pending |
