@@ -27,7 +27,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full details.
 
 **Milestone Goal:** Enable users to analyze competitor performance patterns through visual analytics
 
-- [ ] **Phase 5: Foundation** - Analytics page shell, routing, types, chart library setup
+- [x] **Phase 5: Foundation** - Analytics page shell, routing, types, chart library setup
 - [ ] **Phase 6: Channel Overview** - At-a-glance channel cards with key metrics
 - [ ] **Phase 7: Video Analytics** - Sorting and time period filtering for videos
 - [ ] **Phase 8: Charts** - Upload frequency and duration analysis visualizations
@@ -49,7 +49,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full details.
 **Plans:** 1 plan
 
 Plans:
-- [ ] 05-01-PLAN.md — Analytics page with routing, navigation, loading skeleton, and empty state
+- [x] 05-01-PLAN.md — Analytics page with routing, navigation, loading skeleton, and empty state
 
 ### Phase 6: Channel Overview
 **Goal**: Users can see all tracked channels with key performance metrics at a glance
@@ -127,7 +127,7 @@ Plans:
 | 2. Channel Management | v1.0 | 3/3 | Complete | 2026-01-23 |
 | 3. Video & Ideas | v1.0 | 2/2 | Complete | 2026-01-24 |
 | 4. Polish | v1.0 | 4/4 | Complete | 2026-01-24 |
-| 5. Foundation | v1.1 | 0/1 | Planned | - |
+| 5. Foundation | v1.1 | 1/1 | Complete | 2026-01-26 |
 | 6. Channel Overview | v1.1 | 0/? | Not started | - |
 | 7. Video Analytics | v1.1 | 0/? | Not started | - |
 | 8. Charts | v1.1 | 0/? | Not started | - |

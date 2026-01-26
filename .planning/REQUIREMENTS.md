@@ -9,10 +9,10 @@ Requirements for Analytics Dashboard milestone. Each maps to roadmap phases.
 
 ### Analytics Foundation
 
-- [ ] **ANLY-01**: User can navigate to dedicated Analytics page from main navigation
-- [ ] **ANLY-02**: Analytics page displays dark theme consistent with existing app (#0f0f0f, #272727)
-- [ ] **ANLY-03**: Analytics page shows loading skeleton while data loads
-- [ ] **ANLY-04**: Analytics page shows empty state when no channels tracked
+- [x] **ANLY-01**: User can navigate to dedicated Analytics page from main navigation
+- [x] **ANLY-02**: Analytics page displays dark theme consistent with existing app (#0f0f0f, #272727)
+- [x] **ANLY-03**: Analytics page shows loading skeleton while data loads
+- [x] **ANLY-04**: Analytics page shows empty state when no channels tracked
 
 ### Channel Overview
 
@@ -97,10 +97,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ANLY-01 | Phase 5 | Pending |
-| ANLY-02 | Phase 5 | Pending |
-| ANLY-03 | Phase 5 | Pending |
-| ANLY-04 | Phase 5 | Pending |
+| ANLY-01 | Phase 5 | Complete |
+| ANLY-02 | Phase 5 | Complete |
+| ANLY-03 | Phase 5 | Complete |
+| ANLY-04 | Phase 5 | Complete |
 | CHAN-01 | Phase 6 | Pending |
 | CHAN-02 | Phase 6 | Pending |
 | CHAN-03 | Phase 6 | Pending |
