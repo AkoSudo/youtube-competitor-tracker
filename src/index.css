@@ -9,6 +9,13 @@
   --color-text-secondary: #aaaaaa;
   --color-border: #3f3f3f;
   --color-accent: #ff0000;
+
+  /* Chart-specific colors (accessible on dark background) */
+  --color-chart-primary: #60a5fa;     /* Blue - bars, scatter points */
+  --color-chart-secondary: #34d399;   /* Green - secondary series */
+  --color-chart-accent: #f472b6;      /* Pink - highlights */
+  --color-chart-grid: #3f3f3f;        /* Match existing border */
+  --color-chart-reference: #fbbf24;   /* Yellow - average line */
 }
 
 /* Base dark theme applied globally */
