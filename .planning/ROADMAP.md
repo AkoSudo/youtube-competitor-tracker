@@ -115,10 +115,11 @@ Plans:
 3. Empty chart states display helpful messaging (not blank or zero-filled charts)
 4. Chart animations respect prefers-reduced-motion setting
 
-**Plans**: TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 09-01: TBD
+- [ ] 09-01-PLAN.md — Create usePrefersReducedMotion hook and DataFreshnessIndicator component
+- [ ] 09-02-PLAN.md — Polish charts with axis labels, empty states, motion control, and integrate freshness indicator
 
 ## Progress
 
@@ -132,7 +133,7 @@ Plans:
 | 6. Channel Overview | v1.1 | 1/1 | Complete | 2026-01-26 |
 | 7. Video Analytics | v1.1 | 2/2 | Complete | 2026-01-26 |
 | 8. Charts | v1.1 | 3/3 | Complete | 2026-01-26 |
-| 9. Polish | v1.1 | 0/? | Not started | - |
+| 9. Polish | v1.1 | 0/2 | Not started | - |
 
 ---
 *Roadmap created: 2026-01-26*
