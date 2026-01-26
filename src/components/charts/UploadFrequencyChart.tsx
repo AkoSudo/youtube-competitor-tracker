@@ -7,10 +7,10 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  type TooltipProps,
+  type TooltipContentProps,
 } from 'recharts'
-import type { Video } from '@/lib/types'
-import { transformToFrequencyData, type FrequencyData } from '@/lib/chartUtils'
+import type { Video } from '../../lib/types'
+import { transformToFrequencyData, type FrequencyData } from '../../lib/chartUtils'
 
 interface UploadFrequencyChartProps {
   videos: Video[]
@@ -20,10 +20,8 @@ interface UploadFrequencyChartProps {
  * Custom tooltip for frequency chart.
  * Shows day name and upload count.
  */
-function FrequencyTooltip({
-  active,
-  payload,
-}: TooltipProps<number, string>) {
+function FrequencyTooltip(props: TooltipContentProps<number, string>) {
+  const { active, payload } = props
   if (!active || !payload?.length) {
     return null
   }
@@ -67,7 +65,7 @@ export function UploadFrequencyChart({ videos }: UploadFrequencyChartProps) {
             allowDecimals={false}
           />
           <Tooltip
-            content={<FrequencyTooltip />}
+            content={FrequencyTooltip}
             cursor={{ fill: 'var(--color-surface-hover)', opacity: 0.3 }}
           />
           <Bar
