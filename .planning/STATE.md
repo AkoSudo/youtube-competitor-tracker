@@ -15,11 +15,11 @@ See: `.planning/PROJECT.md` (updated 2026-01-26)
 |-------|-------|
 | Milestone | v1.1 Analytics Dashboard |
 | Phase | 8 of 9 (Charts) |
-| Plan | 2 of 3 |
-| Status | In progress |
-| Last Activity | 2026-01-26 - Completed 08-02-PLAN.md |
+| Plan | 3 of 3 |
+| Status | Phase complete |
+| Last Activity | 2026-01-26 - Completed 08-03-PLAN.md |
 
-Progress: [██████████████████████████████░░░░░░░░░░░░] 63% (v1.0: 22 plans, v1.1: 6/TBD plans)
+Progress: [████████████████████████████████░░░░░░░░░░] 67% (v1.0: 22 plans, v1.1: 7/TBD plans)
 
 ## Performance Metrics
 
@@ -38,9 +38,9 @@ Progress: [███████████████████████
 | 4. Polish | 4 | 32 min | 8 min |
 
 **Velocity (v1.1 in progress):**
-- Total plans completed: 6
+- Total plans completed: 7
 - Average duration: 2 min
-- Total execution time: 12 min
+- Total execution time: 14 min
 
 **By Phase (v1.1):**
 
@@ -49,7 +49,7 @@ Progress: [███████████████████████
 | 5. Foundation | 1 | 2 min | 2 min |
 | 6. Channel Overview | 1 | 2 min | 2 min |
 | 7. Video Analytics | 2 | 4 min | 2 min |
-| 8. Charts | 2 | 4 min | 2 min |
+| 8. Charts | 3 | 6 min | 2 min |
 
 ## Accumulated Context
 
@@ -77,6 +77,9 @@ Recent decisions affecting current work:
 - [08-01]: Data transformation functions separated from chart components
 - [08-02]: Use TooltipContentProps (not TooltipProps) for custom Recharts tooltips
 - [08-02]: Pass tooltip as function reference to Tooltip content prop (not JSX element)
+- [08-03]: Time-filtered videos computed separately from sorted videos for chart use
+- [08-03]: Channel filter state kept in component (not session) since it's exploratory UI
+- [08-03]: Channel selector dropdown: value='' for 'All channels', onChange sets null for reset
 
 ### Pending Todos
 
@@ -89,8 +92,8 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-26
-Stopped at: Completed 08-02-PLAN.md
+Stopped at: Completed 08-03-PLAN.md
 Resume file: None
 
 ---
-*Updated: 2026-01-26 - Completed 08-02-PLAN.md*
+*Updated: 2026-01-26 - Completed 08-03-PLAN.md*
