@@ -24,19 +24,19 @@ Requirements for Analytics Dashboard milestone. Each maps to roadmap phases.
 
 ### Video Sorting
 
-- [ ] **SORT-01**: User can sort videos by most recent (publish date descending)
-- [ ] **SORT-02**: User can sort videos by most views (view count descending)
-- [ ] **SORT-03**: User can toggle sort direction (ascending/descending)
-- [ ] **SORT-04**: Sort selection persists during session
-- [ ] **SORT-05**: Current sort criteria is visually indicated
+- [x] **SORT-01**: User can sort videos by most recent (publish date descending)
+- [x] **SORT-02**: User can sort videos by most views (view count descending)
+- [x] **SORT-03**: User can toggle sort direction (ascending/descending)
+- [x] **SORT-04**: Sort selection persists during session
+- [x] **SORT-05**: Current sort criteria is visually indicated
 
 ### Time Period Filtering
 
-- [ ] **TIME-01**: User can filter analytics by time period (7 days, 30 days, 90 days, all time)
-- [ ] **TIME-02**: Default time period is 30 days
-- [ ] **TIME-03**: Time filter applies to all analytics on the page
-- [ ] **TIME-04**: Current time filter is visually indicated
-- [ ] **TIME-05**: Filtered view shows video count within period
+- [x] **TIME-01**: User can filter analytics by time period (7 days, 30 days, 90 days, all time)
+- [x] **TIME-02**: Default time period is 30 days
+- [x] **TIME-03**: Time filter applies to all analytics on the page
+- [x] **TIME-04**: Current time filter is visually indicated
+- [x] **TIME-05**: Filtered view shows video count within period
 
 ### Upload Frequency Patterns
 
@@ -106,16 +106,16 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CHAN-03 | Phase 6 | Complete |
 | CHAN-04 | Phase 6 | Complete |
 | CHAN-05 | Phase 6 | Complete |
-| SORT-01 | Phase 7 | Pending |
-| SORT-02 | Phase 7 | Pending |
-| SORT-03 | Phase 7 | Pending |
-| SORT-04 | Phase 7 | Pending |
-| SORT-05 | Phase 7 | Pending |
-| TIME-01 | Phase 7 | Pending |
-| TIME-02 | Phase 7 | Pending |
-| TIME-03 | Phase 7 | Pending |
-| TIME-04 | Phase 7 | Pending |
-| TIME-05 | Phase 7 | Pending |
+| SORT-01 | Phase 7 | Complete |
+| SORT-02 | Phase 7 | Complete |
+| SORT-03 | Phase 7 | Complete |
+| SORT-04 | Phase 7 | Complete |
+| SORT-05 | Phase 7 | Complete |
+| TIME-01 | Phase 7 | Complete |
+| TIME-02 | Phase 7 | Complete |
+| TIME-03 | Phase 7 | Complete |
+| TIME-04 | Phase 7 | Complete |
+| TIME-05 | Phase 7 | Complete |
 | FREQ-01 | Phase 8 | Pending |
 | FREQ-02 | Phase 8 | Pending |
 | FREQ-03 | Phase 8 | Pending |

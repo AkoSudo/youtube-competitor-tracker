@@ -29,7 +29,7 @@ See `.planning/milestones/v1.0-ROADMAP.md` for full details.
 
 - [x] **Phase 5: Foundation** - Analytics page shell, routing, types, chart library setup
 - [x] **Phase 6: Channel Overview** - At-a-glance channel cards with key metrics
-- [ ] **Phase 7: Video Analytics** - Sorting and time period filtering for videos
+- [x] **Phase 7: Video Analytics** - Sorting and time period filtering for videos
 - [ ] **Phase 8: Charts** - Upload frequency and duration analysis visualizations
 - [ ] **Phase 9: Polish** - Labels, freshness indicators, empty states, motion
 
@@ -82,8 +82,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 07-01-PLAN.md — Create useSessionState hook and SortFilterControls component
-- [ ] 07-02-PLAN.md — Integrate sorting and filtering into AnalyticsPage
+- [x] 07-01-PLAN.md — Create useSessionState hook and SortFilterControls component
+- [x] 07-02-PLAN.md — Integrate sorting and filtering into AnalyticsPage
 
 ### Phase 8: Charts
 **Goal**: Users can visualize upload frequency patterns and duration vs performance relationships
@@ -129,7 +129,7 @@ Plans:
 | 4. Polish | v1.0 | 4/4 | Complete | 2026-01-24 |
 | 5. Foundation | v1.1 | 1/1 | Complete | 2026-01-26 |
 | 6. Channel Overview | v1.1 | 1/1 | Complete | 2026-01-26 |
-| 7. Video Analytics | v1.1 | 0/2 | Not started | - |
+| 7. Video Analytics | v1.1 | 2/2 | Complete | 2026-01-26 |
 | 8. Charts | v1.1 | 0/? | Not started | - |
 | 9. Polish | v1.1 | 0/? | Not started | - |
 
