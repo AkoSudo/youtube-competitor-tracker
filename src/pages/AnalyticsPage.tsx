@@ -7,6 +7,7 @@ import { EmptyState } from '../components/EmptyState'
 import { AnalyticsPageSkeleton } from '../components/skeletons/AnalyticsPageSkeleton'
 import { ChannelOverviewGrid } from '../components/ChannelOverviewGrid'
 import { SortFilterControls, type SortField, type SortDirection, type TimePeriod } from '../components/SortFilterControls'
+import { UploadFrequencyChart, DurationScatterChart } from '../components/charts'
 import { supabase } from '../lib/supabase'
 import { formatViewCount, formatRelativeDate } from '../lib/formatters'
 import type { Video } from '../lib/types'
@@ -42,6 +43,9 @@ export function AnalyticsPage() {
   const [sortField, setSortField] = useSessionState<SortField>('analytics_sortField', 'published_at')
   const [sortDirection, setSortDirection] = useSessionState<SortDirection>('analytics_sortDir', 'desc')
   const [timePeriod, setTimePeriod] = useSessionState<TimePeriod>('analytics_timePeriod', '30d')
+
+  // Channel filter for frequency chart
+  const [frequencyChannelId, setFrequencyChannelId] = useState<string | null>(null)
 
   // Fetch all videos for tracked channels
   useEffect(() => {
@@ -93,6 +97,35 @@ export function AnalyticsPage() {
 
     return sorted
   }, [videos, timePeriod, sortField, sortDirection])
+
+  // Videos filtered by time period (for charts - uses same time filter as video grid)
+  const timeFilteredVideos = useMemo(() => {
+    if (timePeriod === 'all') return videos
+    const daysMap: Record<Exclude<TimePeriod, 'all'>, number> = {
+      '7d': 7,
+      '30d': 30,
+      '90d': 90,
+    }
+    const cutoffDate = subDays(new Date(), daysMap[timePeriod])
+    return videos.filter(video =>
+      isAfter(new Date(video.published_at), cutoffDate)
+    )
+  }, [videos, timePeriod])
+
+  // Videos for frequency chart (optionally filtered by channel)
+  const frequencyChartVideos = useMemo(() => {
+    if (!frequencyChannelId) return timeFilteredVideos
+    return timeFilteredVideos.filter(v => v.channel_id === frequencyChannelId)
+  }, [timeFilteredVideos, frequencyChannelId])
+
+  // Channel name map for scatter chart tooltips
+  const channelNameMap = useMemo(() => {
+    const map = new Map<string, string>()
+    for (const channel of channels) {
+      map.set(channel.id, channel.name)
+    }
+    return map
+  }, [channels])
 
   // LOADING STATE - Show skeleton while fetching channels
   if (isLoading) {
@@ -162,6 +195,40 @@ export function AnalyticsPage() {
           videosByChannel={videosByChannel}
           isLoading={videosLoading}
         />
+      </section>
+
+      {/* Charts Section */}
+      <section className="mb-8">
+        <h2 className="text-lg font-semibold mb-4 text-[#aaaaaa]">Charts</h2>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {/* Upload Frequency Chart */}
+          <div className="bg-[#272727] rounded-lg p-4">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="font-medium">Upload Frequency by Day</h3>
+              <select
+                value={frequencyChannelId || ''}
+                onChange={(e) => setFrequencyChannelId(e.target.value || null)}
+                className="px-3 py-1.5 bg-[#0f0f0f] border border-[#3f3f3f] rounded-lg text-[#f1f1f1] text-sm"
+              >
+                <option value="">All channels</option>
+                {channels.map(ch => (
+                  <option key={ch.id} value={ch.id}>{ch.name}</option>
+                ))}
+              </select>
+            </div>
+            <UploadFrequencyChart videos={frequencyChartVideos} />
+          </div>
+
+          {/* Duration vs Views Chart */}
+          <div className="bg-[#272727] rounded-lg p-4">
+            <h3 className="font-medium mb-4">Duration vs Views</h3>
+            <DurationScatterChart
+              videos={timeFilteredVideos}
+              channelMap={channelNameMap}
+            />
+          </div>
+        </div>
       </section>
 
       {/* Videos Section */}
