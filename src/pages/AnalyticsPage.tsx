@@ -163,6 +163,49 @@ export function AnalyticsPage() {
           isLoading={videosLoading}
         />
       </section>
+
+      {/* Videos Section */}
+      <section>
+        <h2 className="text-lg font-semibold mb-4 text-[#aaaaaa]">Videos</h2>
+        <SortFilterControls
+          sortField={sortField}
+          sortDirection={sortDirection}
+          timePeriod={timePeriod}
+          videoCount={filteredAndSortedVideos.length}
+          onSortFieldChange={setSortField}
+          onSortDirectionChange={setSortDirection}
+          onTimePeriodChange={setTimePeriod}
+        />
+
+        {/* Video grid or empty state */}
+        {filteredAndSortedVideos.length === 0 ? (
+          <p className="text-[#aaaaaa] text-center py-8">
+            No videos in the selected time period
+          </p>
+        ) : (
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-4">
+            {filteredAndSortedVideos.map(video => (
+              <div
+                key={video.id}
+                className="bg-[#272727] rounded-lg overflow-hidden"
+              >
+                <img
+                  src={video.thumbnail_url}
+                  alt={video.title}
+                  className="w-full aspect-video object-cover"
+                />
+                <div className="p-3">
+                  <h3 className="font-medium text-sm line-clamp-2 mb-2">{video.title}</h3>
+                  <div className="flex justify-between text-xs text-[#aaaaaa]">
+                    <span>{formatViewCount(video.view_count)} views</span>
+                    <span>{formatRelativeDate(video.published_at)}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
     </div>
   )
 }
