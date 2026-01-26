@@ -62,10 +62,10 @@ Plans:
 3. Grid adapts from 1 column on mobile to 2 on tablet to 3+ on desktop
 4. Channel cards load with skeleton state and transition smoothly to content
 
-**Plans**: TBD
+**Plans:** 1 plan
 
 Plans:
-- [ ] 06-01: TBD
+- [ ] 06-01-PLAN.md — Channel overview cards with responsive grid, aggregated metrics, and skeleton loading
 
 ### Phase 7: Video Analytics
 **Goal**: Users can sort and filter videos to find patterns across time periods
@@ -128,7 +128,7 @@ Plans:
 | 3. Video & Ideas | v1.0 | 2/2 | Complete | 2026-01-24 |
 | 4. Polish | v1.0 | 4/4 | Complete | 2026-01-24 |
 | 5. Foundation | v1.1 | 1/1 | Complete | 2026-01-26 |
-| 6. Channel Overview | v1.1 | 0/? | Not started | - |
+| 6. Channel Overview | v1.1 | 0/1 | Not started | - |
 | 7. Video Analytics | v1.1 | 0/? | Not started | - |
 | 8. Charts | v1.1 | 0/? | Not started | - |
 | 9. Polish | v1.1 | 0/? | Not started | - |
